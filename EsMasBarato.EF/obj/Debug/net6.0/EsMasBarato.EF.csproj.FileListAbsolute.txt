@@ -32,3 +32,20 @@ D:\Idra\Api Idra\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\refint\EsMasBar
 D:\Idra\Api Idra\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.pdb
 D:\Idra\Api Idra\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.genruntimeconfig.cache
 D:\Idra\Api Idra\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\ref\EsMasBarato.EF.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\bin\Debug\net6.0\EsMasBarato.EF.deps.json
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\bin\Debug\net6.0\EsMasBarato.EF.runtimeconfig.json
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\bin\Debug\net6.0\EsMasBarato.EF.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\bin\Debug\net6.0\EsMasBarato.EF.pdb
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\bin\Debug\net6.0\EsMasBarato.Entidades.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\bin\Debug\net6.0\EsMasBarato.Entidades.pdb
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.csproj.AssemblyReference.cache
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.AssemblyInfoInputs.cache
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.AssemblyInfo.cs
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.csproj.CoreCompileInputs.cache
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.csproj.CopyComplete
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\refint\EsMasBarato.EF.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.pdb
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\EsMasBarato.EF.genruntimeconfig.cache
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.EF\obj\Debug\net6.0\ref\EsMasBarato.EF.dll

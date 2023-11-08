@@ -958,11 +958,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
+      "projectUniqueName": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
       "projectName": "EsMasBarato.EF",
-      "projectPath": "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
+      "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
       "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
-      "outputPath": "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.EF\\obj\\",
+      "outputPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.EF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -979,8 +979,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {
-              "projectPath": "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj"
+            "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {
+              "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj"
             }
           }
         }

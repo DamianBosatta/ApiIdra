@@ -836,11 +836,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj",
       "projectName": "EsMasBarato.Entidades",
-      "projectPath": "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj",
+      "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj",
       "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
-      "outputPath": "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.Entidades\\obj\\",
+      "outputPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",

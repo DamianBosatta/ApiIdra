@@ -9,23 +9,25 @@ namespace EsMasBarato.Negocios.NegociosGenericos
 {
     public interface INegocioGenerico<T> where T : class
     {
-        List<T> GetAllByCondition(Expression<Func<T, bool>> where);
+        Task<List<T>> GetAllByConditionAsync(Expression<Func<T, bool>> where);
 
-        T GetByCondition(Expression<Func<T, bool>> where);
+        Task<T> GetByConditionAsync(Expression<Func<T, bool>> where);
 
-        List<T> GetAll(
+        Task<List<T>> GetAllAsync(
             Expression<Func<T, bool>> predicate = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null);
 
-        T GetById(int id);
+        Task<T> GetByIdAsync(int id);
 
-        void PartiallyInsert(T model);
-        int Insert(T model);
+        //Task PartiallyInsertAsync(T model);
 
-        int Update(T model);
+        Task<int> InsertAsync(T model);
 
-        int Delete(T model);
+        Task<int> UpdateAsync(T model);
 
-        int Save();
+        Task<int> DeleteAsync(T model);
+
+        Task<int> SaveAsync();
     }
+
 }

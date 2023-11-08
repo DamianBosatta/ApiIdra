@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wMVCO4nEbg3YIT/C7H9scYc/2AYuCZrId672SSKxb08sWJwqPRJ/XsQ0oigc3iMK7iwe6GKdtVpbQWFXpsySwA==",
+  "dgSpecHash": "A165dXXY/NogjLb8EG0W6u71WwbAbMbwgCDuaL9UmE5O4SEz6Gm7W8JHYifoUHVnV2Yz0CvJdRWcjXWTKxR7Zw==",
   "success": true,
-  "projectFilePath": "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
+  "projectFilePath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Damian\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Damian\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

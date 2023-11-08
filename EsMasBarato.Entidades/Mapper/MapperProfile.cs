@@ -9,7 +9,7 @@ namespace EsMasBarato.Entidades.Mapper
 
         public MapperProfile()
         {
-            CreateMap<CategoriaDto,Categoria>().ReverseMap();
+            CreateMap<ComercioDto,Categoria>().ReverseMap();
 
             CreateMap<ComercioDto, Comercio>().ReverseMap();
 

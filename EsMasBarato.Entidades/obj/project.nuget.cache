@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZKBTDYehXPRrES5IebDEYpvYsPX0a+7yULXFpR5M+88jYSd7ARuc994jGex9Uc+fFqe4lRRFW5lEiJtLFa2BNw==",
+  "dgSpecHash": "DJQLi0JgUBqIurIUR2hv/DHgluJGuLM95Z1dND2Fue6VpoJ55zN+KLEY4NPdXFh5P5bvNfvqG85UrJ05/ImFWg==",
   "success": true,
-  "projectFilePath": "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj",
+  "projectFilePath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Damian\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Damian\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

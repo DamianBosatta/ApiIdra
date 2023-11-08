@@ -1,77 +1,71 @@
 ﻿using EsMasBarato.Negocios.Contexto;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 
 namespace EsMasBarato.Negocios.NegociosGenericos
 {
-   public class NegocioGenerico<T> : BLLContext, INegocioGenerico<T> where T : class
+    public class NegocioGenerico<T> : BLLContext, INegocioGenerico<T> where T : class
     {
-        
-
         public NegocioGenerico()
         {
-           
         }
 
-        public int Delete(T model)
+        public async Task<int> DeleteAsync(T model)
         {
             Context.Set<T>().Remove(model);
-            return Save();
+            return await SaveAsync();
         }
 
-        public List<T> GetAll()
+        public async Task<List<T>> GetAllAsync()
         {
-            return Context.Set<T>().ToList();
+            return await Context.Set<T>().ToListAsync();
         }
 
-        public List<T> GetAll(Expression<Func<T, bool>> predicate = null,
+        public async Task<List<T>> GetAllAsync(
+            Expression<Func<T, bool>> predicate = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
         {
             var query = Context.Set<T>().AsQueryable();
 
             query = PrepareQuery(query, predicate, orderBy);
 
-            return query.ToList();
+            return await query.ToListAsync();
         }
 
-        public List<T> GetAllByCondition(Expression<Func<T, bool>> where)
+        public async Task<List<T>> GetAllByConditionAsync(Expression<Func<T, bool>> where)
         {
-            return Context.Set<T>().Where(where).ToList();
+            return await Context.Set<T>().Where(where).ToListAsync();
         }
 
-        public T GetByCondition(Expression<Func<T, bool>> where)
+        public async Task<T> GetByConditionAsync(Expression<Func<T, bool>> where)
         {
-            return Context.Set<T>().Where(where).FirstOrDefault()!;
+            return await Context.Set<T>().Where(where).FirstOrDefaultAsync()!;
         }
 
-        public T GetById(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            var model = Context.Set<T>().Find(id);
+            var model = await Context.Set<T>().FindAsync(id);
             if (model == null)
                 throw new Exception("Objeto no encontrado en la BD");
             return model;
         }
 
-        public int Insert(T model)
+        public async Task<int> InsertAsync(T model)
         {
             Context.Add(model);
-            return Save();
+            return await SaveAsync();
         }
 
-        public void PartiallyInsert(T model)
-        {
-            Context.Add(model);
-        }
+        //public void PartiallyInsert(T model)
+        //{
+        //    Context.Add(model);
+        //}
 
-        public int Save()
-        {
-            return Context.SaveChanges();
-        }
-
-        public int Update(T model)
+        public async Task<int> UpdateAsync(T model)
         {
             Context.Update(model);
-            return Save();
+            return await SaveAsync();
         }
 
         protected IQueryable<T> PrepareQuery(
@@ -87,5 +81,12 @@ namespace EsMasBarato.Negocios.NegociosGenericos
 
             return query;
         }
+
+        public async Task<int> SaveAsync()
+        {
+            return await Context.SaveChangesAsync();
+        }
     }
+
 }
+

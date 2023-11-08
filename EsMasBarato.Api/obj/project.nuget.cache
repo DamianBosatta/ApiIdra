@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fcOPoljJYkI5n9gFA3RcDqvvIJccLaAW67RNxHTlNykaSYMEJyC7dtkM98HUIEuVX0l0Denc1dIHWDZA7ZHQCQ==",
+  "dgSpecHash": "SP3QXiznU5tFDERgDnTnhgHXZnv36GfpDwnSZ6wTq3GptqlcfCZs29Ghw9N01xvqXd0aWfXvEZWGkVEjefOlHw==",
   "success": true,
-  "projectFilePath": "D:\\Idra\\Api Idra\\EsMasBarato.Api\\EsMasBarato.Api\\EsMasBarato.Api.csproj",
+  "projectFilePath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Api\\EsMasBarato.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Damian\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Damian\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

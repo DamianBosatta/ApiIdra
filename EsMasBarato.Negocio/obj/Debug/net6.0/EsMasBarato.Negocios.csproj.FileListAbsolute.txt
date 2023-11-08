@@ -32,3 +32,20 @@ D:\Idra\Api Idra\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarat
 D:\Idra\Api Idra\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\refint\EsMasBarato.Negocios.dll
 D:\Idra\Api Idra\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.pdb
 D:\Idra\Api Idra\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\ref\EsMasBarato.Negocios.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.Negocios.deps.json
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.Negocios.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.Negocios.pdb
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.EF.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.Entidades.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.EF.pdb
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.Entidades.pdb
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.csproj.AssemblyReference.cache
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.AssemblyInfoInputs.cache
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.AssemblyInfo.cs
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.csproj.CoreCompileInputs.cache
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.csproj.CopyComplete
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\refint\EsMasBarato.Negocios.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.pdb
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\ref\EsMasBarato.Negocios.dll

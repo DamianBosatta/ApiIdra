@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EsMasBarato.Entidades.Dto;
+using EsMasBarato.Entidades.Modelos;
 using EsMasBarato.Negocios.Unidad_De_Trabajo;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,33 +22,84 @@ namespace EsMasBarato.Api.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CategoriaDto>>> GetCategoria()
+        public async Task<ActionResult<IEnumerable<ComercioDto>>> GetCategoria()
         {
             try
             {
+                var listaCategorias = await _unidadDeTrabajo.Categorias
+                    .GetAllByConditionAsync(u => u.Borrado == 0); // Materialize the query
 
-                var listaCategorias = _unidadDeTrabajo.Categorias.GetAllByCondition(u => u.Borrado == 0).ToList();
-
-                if (listaCategorias.Count() > 0)
+                if (listaCategorias.Any())
                 {
-                    List<CategoriaDto> listaRespuesta = _mapper.Map<List<CategoriaDto>>(listaCategorias);
-
-                    return Ok(new { success = true, message = "La Lista Esta Lista Para Ser Utilizada", result = listaRespuesta });
-
+                    var listaRespuesta = _mapper.Map<List<ComercioDto>>(listaCategorias);
+                    return Ok(new { success = true, message = "La Lista Está Lista Para Ser Utilizada", 
+                    result = listaRespuesta });
                 }
                 else
                 {
-                    return Ok(new { success = false, message = "La Lista No Contiene Datos", result = 204 });
+                    return NoContent(); // 204 No Content is more appropriate for empty results
                 }
+            }
+            catch (Exception ex)
+            {
+               
+                return StatusCode(500, "Se produjo un error al obtener las categorías.");
+            }
+        }
 
+
+
+        [HttpPost]
+        public async Task<ActionResult> CargarCategoria([FromBody] CategoriaDto categoriaDto)
+        {
+            try
+            {
+                var categoria = await _unidadDeTrabajo.Categorias.GetByConditionAsync(c => c.Descripcion == categoriaDto.Descripcion);
+
+                if (categoria == null)
+                {
+                    Categoria categoriaNew = _mapper.Map<Categoria>(categoriaDto);
+
+                    await _unidadDeTrabajo.Categorias.InsertAsync(categoriaNew);
+                    await _unidadDeTrabajo.Categorias.SaveAsync(); // Guardar los cambios asincrónicamente
+                    return Ok(new { success = true, message = "La Categoría fue creada con éxito", result = 200 });
+                }
+                else
+                {
+                    return Conflict(new { success = false, message = "La Categoría ya existe", result = 409 });
+                }
             }
             catch
             {
-
                 return BadRequest();
             }
-
         }
+
+
+        [HttpPut]
+        public async Task<IActionResult> EditCategoria(CategoriaDto categoriaDto)
+        {
+            try
+            {
+                var categoria = await _unidadDeTrabajo.Categorias.GetByIdAsync((int)categoriaDto.IdCategoria);
+
+                if (categoria != null && categoria.Borrado == 0)
+                {
+                    _mapper.Map(categoriaDto, categoria);
+                    await _unidadDeTrabajo.Categorias.UpdateAsync(categoria);
+
+                    return Ok(new { success = true, message = "La Categoria fue actualizada", result = 200 });
+                }
+
+                return Conflict(new { success = false, message = "La Categoría No Se Encontró", result = 409 });
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+
 
     }
 }
