@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "t2uibQ/7nM90v1dPD/mKc6UflBf1TzISvMbLnlswUVjB9gmj9ZEetcNmUMORby3yA3YHZgscwd/cDRhPdpfdeA==",
+  "dgSpecHash": "SnIFv59RljWAK8baTwz4ks0LUQbfbOQf3nCgykxHFtmlmnzJ0qBsHkt8nPKYpob/fejaGEbQgHcfCNWMk4i7CA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Negocio\\EsMasBarato.Negocios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Damian\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Damian\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Damian\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Damian\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.21\\microsoft.entityframeworkcore.6.0.21.nupkg.sha512",
     "C:\\Users\\Damian\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.21\\microsoft.entityframeworkcore.abstractions.6.0.21.nupkg.sha512",

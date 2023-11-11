@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "A165dXXY/NogjLb8EG0W6u71WwbAbMbwgCDuaL9UmE5O4SEz6Gm7W8JHYifoUHVnV2Yz0CvJdRWcjXWTKxR7Zw==",
+  "dgSpecHash": "qBfDHhwE7IDxW4BIl63US248UkdhW1VVJSP44wofUjP4qBEoPDLGmnti/ZQ0x87vIDNLHZX87lFRw8MHegrjaQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Damian\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Damian\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Damian\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Damian\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Damian\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.21\\microsoft.entityframeworkcore.6.0.21.nupkg.sha512",

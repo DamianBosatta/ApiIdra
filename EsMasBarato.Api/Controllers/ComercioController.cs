@@ -3,6 +3,7 @@ using EsMasBarato.Entidades.Dto;
 using EsMasBarato.Entidades.Modelos;
 using EsMasBarato.Negocios.Unidad_De_Trabajo;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace EsMasBarato.Api.Controllers
 {
@@ -47,13 +48,34 @@ namespace EsMasBarato.Api.Controllers
             catch (Exception ex)
             {
 
-                return StatusCode(500, "Se produjo un error al obtener las categorías.");
+                return StatusCode(500, "Se produjo un error al obtener los comercios");
+            }
+        }
+        [HttpGet("comercios/{idComercio}")]
+        public async Task<IActionResult> GetComercioById(int idComercio)
+        {
+            try
+            {
+                var comercio = await _unidadDeTrabajo.Comercios.GetByIdAsync(idComercio);
+
+                if (comercio != null)
+                {
+                    var comercioEncontrado = _mapper.Map<ComercioDto>(comercio);
+                    return Ok(new { success = true, message = "Response Confirmado", result = comercioEncontrado });
+                }
+
+                return NotFound(new { success = false, message = "No Se Encontro el comercio", result = 204 });
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                return StatusCode(500, new { success = false, message = "Ocurrió un error al procesar la solicitud", error = ex.Message });
             }
         }
 
+        
 
-
-        [HttpPost]
+                [HttpPost]
         public async Task<ActionResult> CargarComercio([FromBody] ComercioDto comercioDto)
         {
             try

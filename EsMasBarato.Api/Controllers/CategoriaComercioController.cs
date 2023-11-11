@@ -22,7 +22,7 @@ namespace EsMasBarato.Api.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CategoriaComercioDto>>> GetCategoria()
+        public async Task<ActionResult<IEnumerable<CategoriaComercioDto>>> GetCategoriaComercio()
         {
             try
             {
@@ -31,7 +31,7 @@ namespace EsMasBarato.Api.Controllers
 
                 if (listaCategoriasComercio.Any())
                 {
-                    var listaRespuesta = _mapper.Map<List<CategoriaComercioDto>>(listaCategoriasComercio);
+                    List<CategoriaComercioDto> listaRespuesta = _mapper.Map<List<CategoriaComercioDto>>(listaCategoriasComercio);
                     return Ok(new
                     {
                         success = true,
@@ -54,7 +54,7 @@ namespace EsMasBarato.Api.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> CargarCategoria([FromBody] CategoriaComercioDto categoriaComercioDto)
+        public async Task<ActionResult> CargarCategoriaComercio([FromBody] CategoriaComercioDto categoriaComercioDto)
         {
             try
             {

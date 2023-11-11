@@ -103,7 +103,6 @@ C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\bin\Debug\net6.0\EsMasBa
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\bin\Debug\net6.0\EsMasBarato.Api.dll
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\bin\Debug\net6.0\EsMasBarato.Api.pdb
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\bin\Debug\net6.0\AutoMapper.dll
-C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -146,3 +145,4 @@ C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\obj\Debug\net6.0\refint\
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\obj\Debug\net6.0\EsMasBarato.Api.pdb
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\obj\Debug\net6.0\EsMasBarato.Api.genruntimeconfig.cache
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\obj\Debug\net6.0\ref\EsMasBarato.Api.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
