@@ -1,28 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace EsMasBarato.Api.Modelos
+namespace EsMasBarato.Entidades.DtoRespuesta
 {
-    public partial class Producto
+    public class ProductoRespuesta
     {
-        public Producto()
-        {
-            Reseñas = new HashSet<Reseña>();
-        }
 
         public int IdProducto { get; set; }
         public string Descripcion { get; set; } = null!;
         public decimal PrecioRegular { get; set; }
         public decimal PrecioWeb { get; set; }
         public int IdComercio { get; set; }
+        public string DescripcionComercio { get; set; }= string.Empty;
         public int IdCategoria { get; set; }
+        public string DescripcionCategoria { get; set; } = string.Empty;
         public string CodigoBarra { get; set; } = null!;
         public bool? Activo { get; set; }
         public bool? Anunciado { get; set; }
         public bool? Valoracion { get; set; }
-
-        public virtual Categoria IdCategoriaNavigation { get; set; } = null!;
-        public virtual Comercio IdComercioNavigation { get; set; } = null!;
-        public virtual ICollection<Reseña> Reseñas { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EsMasBarato.Entidades.Modelos
+namespace EsMasBarato.Api.Modelos
 {
     public partial class Reseña
     {

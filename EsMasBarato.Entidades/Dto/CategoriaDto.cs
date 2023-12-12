@@ -8,7 +8,8 @@ namespace EsMasBarato.Entidades.Dto
 {
    public class CategoriaDto
     {
-        public int? IdCategoria { get; set; }
-        public int Descripcion { get; set; }
+        public int IdCategoria { get; set; }
+        public string Descripcion { get; set; } = null!;
+       
     }
 }

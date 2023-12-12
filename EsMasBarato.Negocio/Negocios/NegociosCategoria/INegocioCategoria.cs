@@ -1,4 +1,5 @@
-﻿using EsMasBarato.Entidades.Modelos;
+﻿
+using EsMasBarato.Api.Modelos;
 using EsMasBarato.Negocios.NegociosGenericos;
 
 namespace EsMasBarato.Negocios.Negocios.NegociosCategoria

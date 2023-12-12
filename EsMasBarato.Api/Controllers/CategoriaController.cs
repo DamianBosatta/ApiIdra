@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using EsMasBarato.Entidades.Dto;
-using EsMasBarato.Entidades.Modelos;
+using EsMasBarato.Api.Modelos;
 using EsMasBarato.Negocios.Unidad_De_Trabajo;
 using Microsoft.AspNetCore.Mvc;
 

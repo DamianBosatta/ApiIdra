@@ -1,14 +1,12 @@
-﻿using EsMasBarato.Entidades.Modelos;
+﻿using EsMasBarato.Api.Modelos;
+using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.NegociosGenericos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace EsMasBarato.Negocios.Negocios.NegociosComercio
 {
     public interface INegocioComercio:INegocioGenerico<Comercio>
     {
+        public Task<List<ComercioRespuesta>> GetComercios(int idComercio);
     }
 }

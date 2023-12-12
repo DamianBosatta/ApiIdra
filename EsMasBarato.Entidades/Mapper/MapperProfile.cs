@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
+using EsMasBarato.Api.Modelos;
 using EsMasBarato.Entidades.Dto;
-using EsMasBarato.Entidades.Modelos;
+
 
 namespace EsMasBarato.Entidades.Mapper
 {
@@ -15,9 +16,7 @@ namespace EsMasBarato.Entidades.Mapper
          
             CreateMap<CategoriaComercioDto, CategoriaComercio>();
             
-            CreateMap<CategoriaComercio, CategoriaComercioDto>();
-           
-
+            CreateMap<CategoriaComercio, CategoriaComercioDto>();          
 
             CreateMap<ComercioDto, Comercio>().ReverseMap();
 
@@ -30,6 +29,11 @@ namespace EsMasBarato.Entidades.Mapper
             CreateMap<ValoracionDto,Valoracion>().ReverseMap();
 
             CreateMap<ValoracionComercioDto, ValoracionComercio>().ReverseMap();
+
+            CreateMap<CategoriaDto, Categoria>();
+
+            CreateMap<Categoria, CategoriaDto>();
+
 
         }
 

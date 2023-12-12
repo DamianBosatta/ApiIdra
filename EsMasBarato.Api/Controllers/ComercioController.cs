@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
 using EsMasBarato.Entidades.Dto;
-using EsMasBarato.Entidades.Modelos;
+using EsMasBarato.Api.Modelos;
 using EsMasBarato.Negocios.Unidad_De_Trabajo;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using EsMasBarato.Entidades.DtoRespuesta;
 
 namespace EsMasBarato.Api.Controllers
 {
@@ -23,21 +24,20 @@ namespace EsMasBarato.Api.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ComercioDto>>> GetComercios()
+        public async Task<ActionResult<IEnumerable<ComercioRespuesta>>> GetComercios()
         {
             try
             {
-                var listaComercios = await _unidadDeTrabajo.Comercios
-                    .GetAllAsync(); // Materialize the query
+                var listaComercios = await _unidadDeTrabajo.Comercios.GetComercios(0); // Materialize the query
 
                 if (listaComercios.Any())
                 {
-                    var listaRespuesta = _mapper.Map<List<ComercioDto>>(listaComercios);
+                    
                     return Ok(new
                     {
                         success = true,
                         message = "La Lista puede Para Ser Utilizada",
-                        result = listaRespuesta
+                        result = listaComercios
                     });
                 }
                 else
@@ -51,17 +51,17 @@ namespace EsMasBarato.Api.Controllers
                 return StatusCode(500, "Se produjo un error al obtener los comercios");
             }
         }
-        [HttpGet("comercios/{idComercio}")]
+        [HttpGet("{idComercio}")]
         public async Task<IActionResult> GetComercioById(int idComercio)
         {
             try
             {
-                var comercio = await _unidadDeTrabajo.Comercios.GetByIdAsync(idComercio);
+                var comercio = await _unidadDeTrabajo.Comercios.GetComercios(idComercio);
 
                 if (comercio != null)
                 {
-                    var comercioEncontrado = _mapper.Map<ComercioDto>(comercio);
-                    return Ok(new { success = true, message = "Response Confirmado", result = comercioEncontrado });
+                    
+                    return Ok(new { success = true, message = "Response Confirmado", result = comercio });
                 }
 
                 return NotFound(new { success = false, message = "No Se Encontro el comercio", result = 204 });

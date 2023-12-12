@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using EsMasBarato.Entidades.Modelos;
+using EsMasBarato.Api.Modelos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -34,6 +34,7 @@ namespace EsMasBarato.EF.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
+
             {
 
                 optionsBuilder.UseMySql(_connectionString, ServerVersion.Parse("5.7.30-mysql"));
@@ -58,7 +59,7 @@ namespace EsMasBarato.EF.Context
                     .HasColumnType("bit(1)")
                     .HasDefaultValueSql("b'0'");
 
-                entity.Property(e => e.Descripcion).HasColumnType("int(25)");
+                entity.Property(e => e.Descripcion).HasMaxLength(25);
             });
 
             modelBuilder.Entity<CategoriaComercio>(entity =>
@@ -139,9 +140,14 @@ namespace EsMasBarato.EF.Context
                     .HasColumnType("int(4)")
                     .HasColumnName("Id_Producto");
 
-                entity.Property(e => e.Activo).HasColumnName("activo");
+                entity.Property(e => e.Activo)
+                    .IsRequired()
+                    .HasColumnName("activo")
+                    .HasDefaultValueSql("'1'");
 
-                entity.Property(e => e.Anunciado).HasColumnName("anunciado");
+                entity.Property(e => e.Anunciado)
+                    .HasColumnName("anunciado")
+                    .HasDefaultValueSql("'0'");
 
                 entity.Property(e => e.CodigoBarra)
                     .HasColumnType("text")
@@ -165,7 +171,9 @@ namespace EsMasBarato.EF.Context
                     .HasPrecision(15)
                     .HasColumnName("Precio_Web");
 
-                entity.Property(e => e.Valoracion).HasColumnName("valoracion");
+                entity.Property(e => e.Valoracion)
+                    .HasColumnName("valoracion")
+                    .HasDefaultValueSql("'0'");
 
                 entity.HasOne(d => d.IdCategoriaNavigation)
                     .WithMany(p => p.Productos)

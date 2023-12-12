@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using EsMasBarato.Entidades.Dto;
-using EsMasBarato.Entidades.Modelos;
+using EsMasBarato.Api.Modelos;
 using EsMasBarato.Negocios.Unidad_De_Trabajo;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,16 +28,16 @@ namespace EsMasBarato.Api.Controllers
             try
             {
                 var listaReseñas = await _unidadDeTrabajo.Reseñas
-                    .GetAllAsync(); // Materialize the query
+                    .GetReseñas(); // Materialize the query
 
                 if (listaReseñas.Any())
                 {
-                    var listaRespuesta = _mapper.Map<List<ReseñaDto>>(listaReseñas);
+                   
                     return Ok(new
                     {
                         success = true,
                         message = "La Lista Puede Ser Utilizada",
-                        result = listaRespuesta
+                        result = listaReseñas
                     });
                 }
                 else

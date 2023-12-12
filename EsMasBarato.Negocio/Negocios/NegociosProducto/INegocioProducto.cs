@@ -1,4 +1,6 @@
-﻿using EsMasBarato.Entidades.Modelos;
+﻿
+using EsMasBarato.Api.Modelos;
+using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.NegociosGenericos;
 using System;
 using System.Collections.Generic;
@@ -10,5 +12,6 @@ namespace EsMasBarato.Negocios.Negocios.NegociosProducto
 {
     public interface INegocioProducto:INegocioGenerico<Producto>
     {
+        public Task<List<ProductoRespuesta>> GetProductos(int idComercio, int idCategoria);
     }
 }

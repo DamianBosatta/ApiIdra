@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EsMasBarato.Entidades.Modelos
+namespace EsMasBarato.Api.Modelos
 {
     public partial class Categoria
     {
@@ -11,7 +11,7 @@ namespace EsMasBarato.Entidades.Modelos
         }
 
         public int IdCategoria { get; set; }
-        public int Descripcion { get; set; }
+        public string Descripcion { get; set; } = null!;
         public ulong? Borrado { get; set; }
 
         public virtual ICollection<Producto> Productos { get; set; }

@@ -1,4 +1,5 @@
-﻿using EsMasBarato.Entidades.Modelos;
+﻿
+using EsMasBarato.Api.Modelos;
 using EsMasBarato.Negocios.NegociosGenericos;
 using System;
 using System.Collections.Generic;

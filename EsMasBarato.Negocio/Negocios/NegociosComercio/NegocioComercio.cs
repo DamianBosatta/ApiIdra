@@ -1,4 +1,6 @@
-﻿using EsMasBarato.Entidades.Modelos;
+﻿
+using EsMasBarato.Api.Modelos;
+using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.NegociosGenericos;
 
 
@@ -9,6 +11,33 @@ namespace EsMasBarato.Negocios.Negocios.NegociosComercio
         public NegocioComercio() : base()
         {
 
+
+        }
+        public async Task<List<ComercioRespuesta>> GetComercios(int idComercio)
+        {
+            var query = (from comercio in Context.Comercios
+                        join categoria in Context.Categorias
+                        on comercio.IdCategoria equals categoria.IdCategoria
+                        join rol in Context.Rols
+                        on comercio.IdRol equals rol.Id
+                        select new ComercioRespuesta
+                        {
+                            IdComercio= comercio.IdComercio,
+                            Nombre=comercio.Nombre,
+                            Direccion=comercio.Direccion,
+                            IdCategoria=comercio.IdCategoria,
+                            DescripcionCategoria= categoria.Descripcion,
+                            NombreContacto= comercio.NombreContacto,
+                            NumeroTelefono= comercio.NumeroTelefono,
+                            IdRol=comercio.IdRol,
+                            DescripcionRol= rol.TipoRol,
+                            Valoracion=comercio.Valoracion,
+
+                        });
+
+            query= idComercio!=0 ? query.Where(c=>c.IdComercio==idComercio) : query;
+
+            return await (Task<List<ComercioRespuesta>>)query;
 
         }
     }
