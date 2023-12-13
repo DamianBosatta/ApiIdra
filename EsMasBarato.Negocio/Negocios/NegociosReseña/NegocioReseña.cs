@@ -1,6 +1,7 @@
 ﻿using EsMasBarato.Api.Modelos;
 using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.NegociosGenericos;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,14 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
     public class NegocioReseña:NegocioGenerico<Reseña>,INegocioReseña
     {
 
-        public NegocioReseña() : base()
+        public NegocioReseña(ILogger logger) : base(logger)
         {
 
 
         }
         public Task<List<ReseñaRespuesta>> GetReseñas()
         {
-
+            try { 
             var query = (from reseña in Context.Reseñas
             join producto in Context.Productos
             on reseña.IdProducto equals producto.IdProducto
@@ -39,7 +40,13 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
             });
 
             return (Task<List<ReseñaRespuesta>>)query;
-
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioReseña" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetReseñas(NegocioReseña)");
+            }
         }
 
     }

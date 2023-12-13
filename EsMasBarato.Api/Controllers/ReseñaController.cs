@@ -4,21 +4,25 @@ using EsMasBarato.Api.Modelos;
 using EsMasBarato.Negocios.Unidad_De_Trabajo;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EsMasBarato.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ReseñaController : Controller
     {
         private readonly IUnidadDeTrabajo _unidadDeTrabajo;
         private readonly IMapper _mapper;
+        private readonly ILogger<ReseñaController> _logger;
 
-        public ReseñaController(IUnidadDeTrabajo unidadDeTrabajo, IMapper mapper)
+        public ReseñaController(IUnidadDeTrabajo unidadDeTrabajo, IMapper mapper, ILogger<ReseñaController> logger)
         {
 
             _mapper = mapper;
             _unidadDeTrabajo = unidadDeTrabajo;
+            _logger = logger;
         }
 
 
@@ -45,10 +49,11 @@ namespace EsMasBarato.Api.Controllers
                     return NoContent(); // 204 No Content is more appropriate for empty results
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                return StatusCode(500, "Se produjo un error al obtener las categorías.");
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Reseñas," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetReseñas(Controller Reseñas)");
             }
         }
 
@@ -64,15 +69,17 @@ namespace EsMasBarato.Api.Controllers
                    Reseña reseñaNew = _mapper.Map<Reseña>(reseñaDto);
 
                     await _unidadDeTrabajo.Reseñas.InsertAsync(reseñaNew);
-                    await _unidadDeTrabajo.Reseñas.SaveAsync(); // Guardar los cambios asincrónicamente
+                    
                     return Ok(new { success = true, message = "La Reseña fue creada con éxito", result = 200 });
                
                    
                 
             }
-            catch
+            catch (Exception)
             {
-                return BadRequest();
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Reseñas," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En CargarReseña(Controller Reseñas)");
             }
         }
 
@@ -94,9 +101,11 @@ namespace EsMasBarato.Api.Controllers
 
                 return Conflict(new { success = false, message = "La Reseña No Se Encontró", result = 409 });
             }
-            catch
+            catch (Exception)
             {
-                return BadRequest();
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Reseñas," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En EditReseña(Controller Reseñas)");
             }
         }
 

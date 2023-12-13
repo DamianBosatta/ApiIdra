@@ -5,21 +5,25 @@ using EsMasBarato.Negocios.Unidad_De_Trabajo;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using EsMasBarato.Entidades.DtoRespuesta;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EsMasBarato.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ComercioController : Controller
     {
         private readonly IUnidadDeTrabajo _unidadDeTrabajo;
         private readonly IMapper _mapper;
+        private readonly ILogger<ComercioController> _logger;
 
-        public ComercioController(IUnidadDeTrabajo unidadDeTrabajo, IMapper mapper)
+        public ComercioController(IUnidadDeTrabajo unidadDeTrabajo, IMapper mapper, ILogger<ComercioController> logger)
         {
 
             _mapper = mapper;
             _unidadDeTrabajo = unidadDeTrabajo;
+            _logger = logger;
         }
 
 
@@ -45,10 +49,11 @@ namespace EsMasBarato.Api.Controllers
                     return NoContent(); // 204 No Content is more appropriate for empty results
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                return StatusCode(500, "Se produjo un error al obtener los comercios");
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Comercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetComercios(Controller Comercio)");
             }
         }
         [HttpGet("{idComercio}")]
@@ -66,10 +71,11 @@ namespace EsMasBarato.Api.Controllers
 
                 return NotFound(new { success = false, message = "No Se Encontro el comercio", result = 204 });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Manejo de excepciones
-                return StatusCode(500, new { success = false, message = "Ocurrió un error al procesar la solicitud", error = ex.Message });
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Comercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetComercioById(Controller Comercio)");
             }
         }
 
@@ -87,7 +93,7 @@ namespace EsMasBarato.Api.Controllers
                     Comercio comercioNew = _mapper.Map<Comercio>(comercioDto);
 
                     await _unidadDeTrabajo.Comercios.InsertAsync(comercioNew);
-                    await _unidadDeTrabajo.Comercios.SaveAsync(); // Guardar los cambios asincrónicamente
+                    
                     return Ok(new { success = true, message = "El comercio fue creado con éxito", result = 200 });
                 }
                 else
@@ -95,9 +101,11 @@ namespace EsMasBarato.Api.Controllers
                     return Conflict(new { success = false, message = "El comercio ya existe", result = 409 });
                 }
             }
-            catch
+            catch (Exception)
             {
-                return BadRequest();
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Comercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En CargarComercio(Controller Comercio)");
             }
         }
 
@@ -119,9 +127,11 @@ namespace EsMasBarato.Api.Controllers
 
                 return Conflict(new { success = false, message = "El comercio  No Se Encontró", result = 409 });
             }
-            catch
+            catch (Exception)
             {
-                return BadRequest();
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Comercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En  EditComercio(Controller Comercio)");
             }
         }
 

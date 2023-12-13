@@ -1,5 +1,6 @@
 ﻿using EsMasBarato.Api.Modelos;
 using EsMasBarato.Negocios.NegociosGenericos;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +11,10 @@ namespace EsMasBarato.Negocios.Negocios.NegociosRol
 {
     public class NegocioRol : NegocioGenerico<Rol>, INegociosRol
     {
-
-
-
-        public NegocioRol() : base()
+        public NegocioRol(ILogger logger) : base(logger)
         { 
         
         }
-
-
-
-
 
     }
 }

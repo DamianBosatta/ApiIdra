@@ -28,8 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj": {
+                "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj"
+              },
               "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Negocio\\EsMasBarato.Negocios.csproj": {
                 "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Negocio\\EsMasBarato.Negocios.csproj"
+              },
+              "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Servicios\\EsMasBarato.Servicios.csproj": {
+                "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Servicios\\EsMasBarato.Servicios.csproj"
               }
             }
           }
@@ -44,6 +50,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -68,9 +78,25 @@
               "target": "Package",
               "version": "[6.0.2, )"
             },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.12, )"
             }
           },
           "imports": [
@@ -240,6 +266,83 @@
         }
       }
     },
+    "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj",
+        "projectName": "EsMasBarato.Excepciones",
+        "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj",
+        "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Negocio\\EsMasBarato.Negocios.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -269,6 +372,9 @@
               },
               "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {
                 "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj"
+              },
+              "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj": {
+                "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj"
               }
             }
           }
@@ -294,6 +400,78 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Servicios\\EsMasBarato.Servicios.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Servicios\\EsMasBarato.Servicios.csproj",
+        "projectName": "EsMasBarato.Servicios",
+        "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Servicios\\EsMasBarato.Servicios.csproj",
+        "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Servicios\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj": {
+                "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj"
+              },
+              "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Negocio\\EsMasBarato.Negocios.csproj": {
+                "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Negocio\\EsMasBarato.Negocios.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.25, )"
             }
           },
           "imports": [

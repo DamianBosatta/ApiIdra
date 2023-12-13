@@ -3,12 +3,13 @@ using EsMasBarato.Api.Modelos;
 using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.NegociosGenericos;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace EsMasBarato.Negocios.Negocios.NegociosProducto
 {
     public class NegocioProducto:NegocioGenerico<Producto>,INegocioProducto
     {
-        public NegocioProducto() : base()
+        public NegocioProducto(ILogger logger) : base(logger)
         {
 
 
@@ -16,6 +17,7 @@ namespace EsMasBarato.Negocios.Negocios.NegociosProducto
 
         public async Task<List<ProductoRespuesta>> GetProductos(int idComercio, int idCategoria)
         {
+            try { 
             var query = (from producto in Context.Productos
                          join comercio in Context.Comercios
                          on producto.IdComercio equals comercio.IdComercio
@@ -43,6 +45,13 @@ namespace EsMasBarato.Negocios.Negocios.NegociosProducto
             query = idCategoria != 0 ? query.Where(producto => producto.IdCategoria == idCategoria) : query;
 
             return await query.ToListAsync();
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioProducto" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetProductos(NegocioProducto)");
+            }
 
         }
     }

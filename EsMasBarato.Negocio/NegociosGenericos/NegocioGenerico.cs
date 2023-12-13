@@ -1,5 +1,6 @@
 ﻿using EsMasBarato.Negocios.Contexto;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using System.Linq.Expressions;
 
 
@@ -7,9 +8,15 @@ namespace EsMasBarato.Negocios.NegociosGenericos
 {
     public class NegocioGenerico<T> : BLLContext, INegocioGenerico<T> where T : class
     {
-        public NegocioGenerico()
+        protected readonly ILogger _logger;
+      
+
+        public NegocioGenerico(ILogger logger)
         {
+           _logger = logger;
         }
+
+     
 
         public async Task<int> DeleteAsync(T model)
         {

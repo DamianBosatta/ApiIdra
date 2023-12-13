@@ -3,22 +3,25 @@ using EsMasBarato.Api.Modelos;
 using EsMasBarato.Entidades.Dto;
 using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.Unidad_De_Trabajo;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EsMasBarato.Api.Controllers
-{
+{   [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValoracionComercioController : Controller
     {
         private readonly IUnidadDeTrabajo _unidadDeTrabajo;
         private readonly IMapper _mapper;
+        private readonly ILogger<ValoracionComercioController> _logger;
 
-        public ValoracionComercioController(IUnidadDeTrabajo unidadDeTrabajo, IMapper mapper)
+        public ValoracionComercioController(IUnidadDeTrabajo unidadDeTrabajo, IMapper mapper, ILogger<ValoracionComercioController> logger)
         {
 
             _mapper = mapper;
             _unidadDeTrabajo = unidadDeTrabajo;
+            _logger = logger;
         }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ValoracionComercioRespuesta>>> GetValoracionComercio()
@@ -42,10 +45,11 @@ namespace EsMasBarato.Api.Controllers
                     return NoContent(); // 204 No Content is more appropriate for empty results
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                return StatusCode(500, "Se produjo un error al obtener las Valoraciones del Comercio.");
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De ValoracionComercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetValoracionComercio(Controller ValoracionComercio)");
             }
         }
 
@@ -61,7 +65,7 @@ namespace EsMasBarato.Api.Controllers
                     ValoracionComercio ValoracionComercioNew = _mapper.Map<ValoracionComercio>(ValoracionComercioDto);
 
                     await _unidadDeTrabajo.ValoracionesComercio.InsertAsync(ValoracionComercioNew);
-                    await _unidadDeTrabajo.ValoracionesComercio.SaveAsync(); // Guardar los cambios asincrónicamente
+                   
                     return Ok(new { success = true, message = "La Valoracion del comercio fue creada con éxito", result = 200 });
                 }
                 else
@@ -69,11 +73,14 @@ namespace EsMasBarato.Api.Controllers
                     return Conflict(new { success = false, message = "La Valoracion Comercio ya existe", result = 409 });
                 }
             }
-            catch
+            catch (Exception)
             {
-                return BadRequest();
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De ValoracionComercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En CargarValoracionComercio(Controller ValoracionComercio)");
             }
-        }
+        
+    }
 
         [HttpPut]
         public async Task<IActionResult> EditValoracionComercio(ValoracionComercioDto ValoracionComercioDto)
@@ -92,9 +99,11 @@ namespace EsMasBarato.Api.Controllers
 
                 return Conflict(new { success = false, message = "La Valoracion Comercio No Se Encontró", result = 409 });
             }
-            catch
+            catch (Exception)
             {
-                return BadRequest();
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De ValoracionComercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En EditValoracionComercio(Controller ValoracionComercio)");
             }
         }
 

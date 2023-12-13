@@ -3,21 +3,25 @@ using EsMasBarato.Entidades.Dto;
 using EsMasBarato.Api.Modelos;
 using EsMasBarato.Negocios.Unidad_De_Trabajo;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EsMasBarato.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriaComercioController : Controller
     {
         private readonly IUnidadDeTrabajo _unidadDeTrabajo;
         private readonly IMapper _mapper;
+        private readonly ILogger<CategoriaComercioController> _logger;
 
-        public CategoriaComercioController(IUnidadDeTrabajo unidadDeTrabajo, IMapper mapper)
+        public CategoriaComercioController(IUnidadDeTrabajo unidadDeTrabajo, IMapper mapper, ILogger<CategoriaComercioController> logger)
         {
 
             _mapper = mapper;
             _unidadDeTrabajo = unidadDeTrabajo;
+            _logger = logger;
         }
 
 
@@ -44,10 +48,11 @@ namespace EsMasBarato.Api.Controllers
                     return NoContent(); // 204 No Content is more appropriate for empty results
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                return StatusCode(500, "Se produjo un error al obtener las categorías de comercio.");
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De CategoriaComercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetCategoriaComercio(Controller CategoriaComercio)");
             }
         }
 
@@ -65,7 +70,7 @@ namespace EsMasBarato.Api.Controllers
                     CategoriaComercio categoriaComercioNew = _mapper.Map<CategoriaComercio>(categoriaComercioDto);
 
                     await _unidadDeTrabajo.CategoriasComercio.InsertAsync(categoriaComercioNew);
-                    await _unidadDeTrabajo.CategoriasComercio.SaveAsync(); // Guardar los cambios asincrónicamente
+                   
                     return Ok(new { success = true, message = "La Categoría de comercio fue creada con éxito", result = 200 });
                 }
                 else
@@ -73,9 +78,11 @@ namespace EsMasBarato.Api.Controllers
                     return Conflict(new { success = false, message = "La Categoría de comercio ya existe", result = 409 });
                 }
             }
-            catch
+            catch (Exception)
             {
-                return BadRequest();
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De CategoriaComercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En CargarCategoriaComercio(Controller CategoriaComercio)");
             }
         }
 
@@ -97,9 +104,11 @@ namespace EsMasBarato.Api.Controllers
 
                 return Conflict(new { success = false, message = "La Categoría No Se Encontró", result = 409 });
             }
-            catch
+            catch (Exception)
             {
-                return BadRequest();
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De CategoriaComercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En EditCategoriaComercio(Controller CategoriaComercio)");
             }
         }
 

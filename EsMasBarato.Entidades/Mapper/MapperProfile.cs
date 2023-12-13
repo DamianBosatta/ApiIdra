@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using EsMasBarato.Api.Modelos;
 using EsMasBarato.Entidades.Dto;
-
+using EsMasBarato.Entidades.DtoRespuesta;
 
 namespace EsMasBarato.Entidades.Mapper
 {
@@ -33,6 +33,10 @@ namespace EsMasBarato.Entidades.Mapper
             CreateMap<CategoriaDto, Categoria>();
 
             CreateMap<Categoria, CategoriaDto>();
+            #region USUARIO
+            CreateMap<UsuarioDto, Usuario>();
+            CreateMap<Usuario, UsuarioRespuesta>();
+            #endregion
 
 
         }

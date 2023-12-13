@@ -1,5 +1,6 @@
 ﻿using EsMasBarato.Api.Modelos;
 using EsMasBarato.Negocios.NegociosGenericos;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace EsMasBarato.Negocios.Negocios.NegociosCategoriaComercio
 {
     public class NegocioCategoriaComercio: NegocioGenerico<CategoriaComercio>,INegocioCategoriaComercio
     {
-        public NegocioCategoriaComercio() : base()
+        public NegocioCategoriaComercio(ILogger logger) : base(logger)
         {
 
 

@@ -37,8 +37,10 @@ C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsM
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.Negocios.pdb
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.EF.dll
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.Entidades.dll
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.Excepciones.dll
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.EF.pdb
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.Entidades.pdb
+C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\bin\Debug\net6.0\EsMasBarato.Excepciones.pdb
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.csproj.AssemblyReference.cache
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Negocio\obj\Debug\net6.0\EsMasBarato.Negocios.AssemblyInfoInputs.cache

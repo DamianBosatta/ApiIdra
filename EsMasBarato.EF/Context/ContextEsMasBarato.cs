@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using EsMasBarato.Api.Modelos;
+﻿using EsMasBarato.Api.Modelos;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+
 
 namespace EsMasBarato.EF.Context
 {
@@ -21,6 +19,7 @@ namespace EsMasBarato.EF.Context
             this._connectionString = connectionString;
         }
 
+
         public virtual DbSet<Categoria> Categorias { get; set; } = null!;
         public virtual DbSet<CategoriaComercio> CategoriaComercios { get; set; } = null!;
         public virtual DbSet<Comercio> Comercios { get; set; } = null!;
@@ -31,6 +30,7 @@ namespace EsMasBarato.EF.Context
         public virtual DbSet<Valoracion> Valoracions { get; set; } = null!;
         public virtual DbSet<ValoracionComercio> ValoracionComercios { get; set; } = null!;
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -40,6 +40,7 @@ namespace EsMasBarato.EF.Context
                 optionsBuilder.UseMySql(_connectionString, ServerVersion.Parse("5.7.30-mysql"));
             }
         }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -262,6 +263,14 @@ namespace EsMasBarato.EF.Context
                     .HasColumnName("id_rol");
 
                 entity.Property(e => e.Nombre).HasMaxLength(15);
+
+                entity.Property(e => e.PasswordSalt)
+                    .HasColumnType("blob")
+                    .HasColumnName("PasswordSALT");
+
+                entity.Property(e => e.PaswordHash)
+                    .HasColumnType("blob")
+                    .HasColumnName("PaswordHASH");
 
                 entity.HasOne(d => d.IdRolNavigation)
                     .WithMany(p => p.Usuarios)

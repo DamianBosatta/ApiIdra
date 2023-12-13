@@ -19,7 +19,6 @@ namespace EsMasBarato.Negocios.Unidad_De_Trabajo
         INegociosRol Roles { get; }
         INegocioUsuario Usuarios { get; }
         INegocioValoracion Valoraciones { get; }
-
         INegocioValoracionComercio ValoracionesComercio { get; }
 
     }

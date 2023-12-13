@@ -1,19 +1,19 @@
 ﻿using EsMasBarato.Api.Modelos;
 using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.NegociosGenericos;
+using Serilog;
 
 namespace EsMasBarato.Negocios.Negocios.NegociosValoracion
 {
     public class NegocioValoracionComercio:NegocioGenerico<ValoracionComercio>,INegocioValoracionComercio
     {
-        public NegocioValoracionComercio() : base()
+        public NegocioValoracionComercio(ILogger logger) : base(logger)
         {
-
-
         }
 
         public Task<List<ValoracionComercioRespuesta>> GetValoracionComercios()
         {
+            try { 
             var query = (from valComercio in Context.ValoracionComercios
                          join valoracion in Context.Valoracions
                          on valComercio.IdValoracion equals valoracion.IdValoracion
@@ -33,7 +33,13 @@ namespace EsMasBarato.Negocios.Negocios.NegociosValoracion
 
 
             return (Task<List<ValoracionComercioRespuesta>>)query;
-
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioValoracionComercio" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetValoracionComercios(NegocioValoracionComercio)");
+            }
         }
     }
 }
