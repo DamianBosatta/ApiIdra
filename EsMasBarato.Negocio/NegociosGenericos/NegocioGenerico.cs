@@ -20,24 +20,52 @@ namespace EsMasBarato.Negocios.NegociosGenericos
 
         public async Task<int> DeleteAsync(T model)
         {
+            try { 
+
             Context.Set<T>().Remove(model);
             return await SaveAsync();
+           
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioGenerico" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En DeleteAsync(NegocioGenerico)");
+            }
         }
 
         public async Task<List<T>> GetAllAsync()
         {
+            try { 
+
             return await Context.Set<T>().ToListAsync();
+
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioGenerico" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetAllAsync(NegocioGenerico)");
+            }
         }
 
         public async Task<List<T>> GetAllAsync(
             Expression<Func<T, bool>> predicate = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
         {
+            try { 
             var query = Context.Set<T>().AsQueryable();
 
             query = PrepareQuery(query, predicate, orderBy);
 
             return await query.ToListAsync();
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioGenerico" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetAllAsync(Expresion Predicate)(NegocioGenerico)");
+            }
         }
 
         public async Task<List<T>> GetAllByConditionAsync(Expression<Func<T, bool>> where)
@@ -47,32 +75,70 @@ namespace EsMasBarato.Negocios.NegociosGenericos
 
         public async Task<T> GetByConditionAsync(Expression<Func<T, bool>> where)
         {
-            return await Context.Set<T>().Where(where).FirstOrDefaultAsync()!;
+            try
+            {
+
+                return await Context.Set<T>().Where(where).FirstOrDefaultAsync()!;
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioGenerico" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetByConditionAsync(Expresion Predicate)(NegocioGenerico)");
+            }
+
         }
 
         public async Task<T> GetByIdAsync(int id)
         {
-            var model = await Context.Set<T>().FindAsync(id);
-            if (model == null)
-                throw new Exception("Objeto no encontrado en la BD");
-            return model;
+            try 
+            { 
+
+            return await Context.Set<T>().FindAsync(id);
+
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioGenerico" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetByIdAsync(Expresion Predicate)(NegocioGenerico)");
+            }
+
         }
 
         public async Task<int> InsertAsync(T model)
         {
+            try 
+            { 
+            
             Context.Add(model);
             return await SaveAsync();
+
+            }
+              catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioGenerico" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En InsertAsync(Expresion Predicate)(NegocioGenerico)");
+            }
         }
 
-        //public void PartiallyInsert(T model)
-        //{
-        //    Context.Add(model);
-        //}
-
+     
         public async Task<int> UpdateAsync(T model)
         {
+            try 
+            {
+                
             Context.Update(model);
             return await SaveAsync();
+
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioGenerico" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En UpdateAsync(Expresion Predicate)(NegocioGenerico)");
+            }
         }
 
         protected IQueryable<T> PrepareQuery(
@@ -91,8 +157,20 @@ namespace EsMasBarato.Negocios.NegociosGenericos
 
         public async Task<int> SaveAsync()
         {
+            try 
+            { 
+
             return await Context.SaveChangesAsync();
-        }
+             
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioGenerico" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En SaveAsync(Expresion Predicate)(NegocioGenerico)");
+            }
+
+         }
     }
 
 }
