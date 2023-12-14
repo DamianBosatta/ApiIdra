@@ -11,5 +11,6 @@ namespace EsMasBarato.Entidades.Dto
         public int? NumeroTelefono { get; set; }
         public int? IdRol { get; set; }
         public int? Valoracion { get; set; }
+        
     }
 }

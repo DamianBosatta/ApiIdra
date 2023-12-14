@@ -12,6 +12,8 @@ namespace EsMasBarato.Api.Modelos
         public byte[] PasswordSalt { get; set; } = null!;
         public ulong? Borrado { get; set; }
         public int? IdRol { get; set; }
+        public int? IdComercio { get; set; }
+
         public virtual Rol? IdRolNavigation { get; set; }
     }
 }

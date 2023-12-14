@@ -20,13 +20,17 @@ namespace EsMasBarato.Negocios.Negocios.NegociosUsuario
             var query = (from usuario in Context.Usuarios.Where(u => u.Borrado == 0)
                          join rol in Context.Rols
                          on usuario.IdRol equals rol.Id
+                         join comercio in Context.Comercios
+                         on usuario.IdComercio equals comercio.IdComercio
                          select new UsuarioRespuesta
                          {   Id = usuario.IdUsuario,
                              Nombre = usuario.Nombre,
                              Email = usuario.Email,
                              IdRol = usuario.IdRol,
-                             TipoRol = rol.TipoRol
-
+                             TipoRol = rol.TipoRol,
+                             IdComercio = comercio.IdComercio,
+                             TipoComercio=comercio.Nombre
+                             
                          }) ;
 
             return await query.ToListAsync();

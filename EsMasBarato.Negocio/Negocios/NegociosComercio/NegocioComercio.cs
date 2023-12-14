@@ -2,6 +2,7 @@
 using EsMasBarato.Api.Modelos;
 using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.NegociosGenericos;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 
@@ -39,7 +40,7 @@ namespace EsMasBarato.Negocios.Negocios.NegociosComercio
 
             query= idComercio!=0 ? query.Where(c=>c.IdComercio==idComercio) : query;
 
-            return await (Task<List<ComercioRespuesta>>)query;
+            return await query.ToListAsync();
             }
             catch (Exception)
             {

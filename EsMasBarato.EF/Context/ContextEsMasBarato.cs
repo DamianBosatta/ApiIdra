@@ -1,6 +1,8 @@
-﻿using EsMasBarato.Api.Modelos;
+﻿using System;
+using System.Collections.Generic;
+using EsMasBarato.Api.Modelos;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace EsMasBarato.EF.Context
 {
@@ -19,7 +21,6 @@ namespace EsMasBarato.EF.Context
             this._connectionString = connectionString;
         }
 
-
         public virtual DbSet<Categoria> Categorias { get; set; } = null!;
         public virtual DbSet<CategoriaComercio> CategoriaComercios { get; set; } = null!;
         public virtual DbSet<Comercio> Comercios { get; set; } = null!;
@@ -29,7 +30,6 @@ namespace EsMasBarato.EF.Context
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
         public virtual DbSet<Valoracion> Valoracions { get; set; } = null!;
         public virtual DbSet<ValoracionComercio> ValoracionComercios { get; set; } = null!;
-
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -256,13 +256,17 @@ namespace EsMasBarato.EF.Context
                     .HasColumnType("bit(1)")
                     .HasDefaultValueSql("b'0'");
 
-                entity.Property(e => e.Email).HasMaxLength(25);
+                entity.Property(e => e.Email).HasMaxLength(100);
+
+                entity.Property(e => e.IdComercio)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("id_comercio");
 
                 entity.Property(e => e.IdRol)
                     .HasColumnType("int(11)")
                     .HasColumnName("id_rol");
 
-                entity.Property(e => e.Nombre).HasMaxLength(15);
+                entity.Property(e => e.Nombre).HasMaxLength(100);
 
                 entity.Property(e => e.PasswordSalt)
                     .HasColumnType("blob")

@@ -14,5 +14,11 @@ namespace EsMasBarato.Entidades.DtoRespuesta
 
         public string TipoRol {  get; set; } = string.Empty;
 
+        public int IdComercio { get; set; } = 0;
+
+        public string TipoComercio { get; set; }= string.Empty;
+
+
+
     }
 }

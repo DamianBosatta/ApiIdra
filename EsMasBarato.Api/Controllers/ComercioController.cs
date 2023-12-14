@@ -57,7 +57,7 @@ namespace EsMasBarato.Api.Controllers
             }
         }
         [HttpGet("{idComercio}")]
-        public async Task<IActionResult> GetComercioById(int idComercio)
+        public async Task<ActionResult<IEnumerable<ComercioRespuesta>>> GetComercioById(int idComercio)
         {
             try
             {
