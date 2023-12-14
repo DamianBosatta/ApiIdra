@@ -6,6 +6,6 @@ namespace EsMasBarato.Negocios.Negocios.NegociosValoracion
 {
    public interface INegocioValoracionComercio:INegocioGenerico<ValoracionComercio>
     {
-        public Task<List<ValoracionComercioRespuesta>> GetValoracionComercios();
+        public Task<List<ValoracionComercioRespuesta>> GetValoracionComercios(int idComercio, int idValoracionComercio);
     }
 }

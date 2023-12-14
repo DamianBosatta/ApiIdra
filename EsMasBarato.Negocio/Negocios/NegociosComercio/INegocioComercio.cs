@@ -8,5 +8,7 @@ namespace EsMasBarato.Negocios.Negocios.NegociosComercio
     public interface INegocioComercio:INegocioGenerico<Comercio>
     {
         public Task<List<ComercioRespuesta>> GetComercios(int idComercio);
+
+        public Task<decimal> ObtenerPromedioValoracionComercio(int idComercio);
     }
 }

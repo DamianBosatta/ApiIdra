@@ -14,7 +14,7 @@ namespace EsMasBarato.Negocios.Negocios.NegociosUsuario
 
         }
 
-        public async Task<List<UsuarioRespuesta>> GetUsuarios()
+        public async Task<List<UsuarioRespuesta>> GetUsuarios(int idUser)
         {
             try { 
             var query = (from usuario in Context.Usuarios.Where(u => u.Borrado == 0)
@@ -32,6 +32,8 @@ namespace EsMasBarato.Negocios.Negocios.NegociosUsuario
                              TipoComercio=comercio.Nombre
                              
                          }) ;
+
+                query = idUser != 0 ? query.Where(usuario => usuario.Id == idUser) : query;
 
             return await query.ToListAsync();
             }

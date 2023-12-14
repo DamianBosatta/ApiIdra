@@ -56,6 +56,30 @@ namespace EsMasBarato.Api.Controllers
                 throw new InvalidOperationException("Excepcion En GetComercios(Controller Comercio)");
             }
         }
+        [Route("promedio/")]
+        [HttpGet("{idComercio}")]
+        public async Task<ActionResult> PromedioValoracionComercio(int idComercio)
+        {
+            try
+            {
+               decimal promedio = await _unidadDeTrabajo.Comercios.ObtenerPromedioValoracionComercio(idComercio);
+
+                if (promedio>0)
+                {
+                    
+                    return Ok(new { success = true, message = "Response Confirmado", result = promedio });
+                }
+
+                return NotFound(new { success = false, message = "El promedio es 0 ", result = 204 });
+            }
+            catch (Exception)
+            {
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Comercio," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetComercioById(Controller Comercio)");
+            }
+        }
+
         [HttpGet("{idComercio}")]
         public async Task<ActionResult<IEnumerable<ComercioRespuesta>>> GetComercioById(int idComercio)
         {
@@ -65,7 +89,7 @@ namespace EsMasBarato.Api.Controllers
 
                 if (comercio != null)
                 {
-                    
+
                     return Ok(new { success = true, message = "Response Confirmado", result = comercio });
                 }
 
@@ -79,9 +103,9 @@ namespace EsMasBarato.Api.Controllers
             }
         }
 
-        
 
-                [HttpPost]
+
+        [HttpPost]
         public async Task<ActionResult> CargarComercio([FromBody] ComercioDto comercioDto)
         {
             try

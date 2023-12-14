@@ -5,6 +5,8 @@ using EsMasBarato.Negocios.Unidad_De_Trabajo;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using EsMasBarato.Entidades.Codigos_Utiles;
+using EsMasBarato.Entidades.DtoRespuesta;
 
 namespace EsMasBarato.Api.Controllers
 {
@@ -25,14 +27,14 @@ namespace EsMasBarato.Api.Controllers
             _logger = logger;
         }
 
-
+        [Route("usuario/{idUser}")]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ReseñaDto>>> GetReseñas()
+        public async Task<ActionResult<IEnumerable<ReseñaRespuesta>>> GetReseñasUsuario(int idUser)
         {
             try
             {
                 var listaReseñas = await _unidadDeTrabajo.Reseñas
-                    .GetReseñas(); // Materialize the query
+                    .GetReseñas(CodigosUtiles.OpcionTodos, CodigosUtiles.OpcionTodos, idUser); // Materialize the query
 
                 if (listaReseñas.Any())
                 {
@@ -53,11 +55,72 @@ namespace EsMasBarato.Api.Controllers
             {
                 _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Reseñas," +
                       " A Continuacion Encontraras Mas Informacion -> ->");
-                throw new InvalidOperationException("Excepcion En GetReseñas(Controller Reseñas)");
+                throw new InvalidOperationException("Excepcion En  GetReseñasUsuario(Controller Reseñas)");
+            }
+        }
+        [Route("producto/{idProducto}")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ReseñaRespuesta>>> GetReseñasPorProducto(int idProducto)
+        {
+            try
+            {
+                var listaReseñas = await _unidadDeTrabajo.Reseñas
+                    .GetReseñas(idProducto, CodigosUtiles.OpcionTodos, CodigosUtiles.OpcionTodos); // Materialize the query
+
+                if (listaReseñas.Any())
+                {
+
+                    return Ok(new
+                    {
+                        success = true,
+                        message = "La Lista Puede Ser Utilizada",
+                        result = listaReseñas
+                    });
+                }
+                else
+                {
+                    return NoContent(); // 204 No Content is more appropriate for empty results
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Reseñas," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetReseñasPorProducto(Controller Reseñas)");
             }
         }
 
+        [Route("valoracion/{idValoracion}")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ReseñaRespuesta>>> GetReseñasPorValoracion(int idValoracion)
+        {
+            try
+            {
+                var listaReseñas = await _unidadDeTrabajo.Reseñas
+                    .GetReseñas(CodigosUtiles.OpcionTodos, idValoracion, CodigosUtiles.OpcionTodos); // Materialize the query
 
+                if (listaReseñas.Any())
+                {
+
+                    return Ok(new
+                    {
+                        success = true,
+                        message = "La Lista Puede Ser Utilizada",
+                        result = listaReseñas
+                    });
+                }
+                else
+                {
+                    return NoContent(); // 204 No Content is more appropriate for empty results
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Reseñas," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En  GetReseñasPorValoracion(Controller Reseñas)");
+            }
+        }
 
         [HttpPost]
         public async Task<ActionResult> CargarReseña([FromBody] ReseñaDto reseñaDto)

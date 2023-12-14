@@ -1,6 +1,7 @@
 ﻿using EsMasBarato.Api.Modelos;
 using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.NegociosGenericos;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
 
 
         }
-        public Task<List<ReseñaRespuesta>> GetReseñas()
+        public Task<List<ReseñaRespuesta>> GetReseñas(int idProducto,int idValoracion,int idUsuario)
         {
             try { 
             var query = (from reseña in Context.Reseñas
@@ -28,18 +29,26 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
             on reseña.IdUsuario equals usuario.IdUsuario
             select new ReseñaRespuesta
             {
-                IdUsuario= reseña.Id,
+                Id = reseña.Id,
+                IdUsuario = reseña.Id,
                 NombreUsuario= usuario.Nombre,
                 IdProducto= producto.IdProducto,
                 DescripcionProducto=producto.Descripcion,
                 IdValoracion= reseña.IdValoracion,
-                Comentario=reseña.Comentario,
-                Id=reseña.Id
+                Comentario=reseña.Comentario
+                
 
 
             });
 
-            return (Task<List<ReseñaRespuesta>>)query;
+                query = idProducto == 0 ? query : query.Where(reseña => reseña.IdProducto == idProducto);
+
+                query= idValoracion==0 ? query : query.Where(reseña=> reseña.IdValoracion== idValoracion);
+
+                query = idUsuario== 0? query : query.Where(reseña => reseña.IdUsuario == idUsuario);
+
+                return query.ToListAsync();
+
             }
             catch (Exception)
             {

@@ -1,6 +1,7 @@
 ﻿using EsMasBarato.Api.Modelos;
 using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.NegociosGenericos;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 namespace EsMasBarato.Negocios.Negocios.NegociosValoracion
@@ -11,7 +12,7 @@ namespace EsMasBarato.Negocios.Negocios.NegociosValoracion
         {
         }
 
-        public Task<List<ValoracionComercioRespuesta>> GetValoracionComercios()
+        public async Task<List<ValoracionComercioRespuesta>> GetValoracionComercios(int idComercio,int idValoracion)
         {
             try { 
             var query = (from valComercio in Context.ValoracionComercios
@@ -30,9 +31,13 @@ namespace EsMasBarato.Negocios.Negocios.NegociosValoracion
 
                          });
 
+                query = idComercio==0? query: query.Where(v=>v.IdComercio==idComercio);
+
+                query = idValoracion == 0 ? query : query.Where(v => v.IdValoracion == idValoracion);
 
 
-            return (Task<List<ValoracionComercioRespuesta>>)query;
+            return await query.ToListAsync();
+
             }
             catch (Exception)
             {

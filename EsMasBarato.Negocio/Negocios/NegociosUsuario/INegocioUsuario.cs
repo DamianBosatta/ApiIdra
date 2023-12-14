@@ -7,6 +7,6 @@ namespace EsMasBarato.Negocios.Negocios.NegociosUsuario
 {
     public interface INegocioUsuario:INegocioGenerico<Usuario>
     {
-        public Task<List<UsuarioRespuesta>> GetUsuarios();
+        public Task<List<UsuarioRespuesta>> GetUsuarios(int idUser);
     }
 }

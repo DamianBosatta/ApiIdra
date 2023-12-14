@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EsMasBarato.Entidades.Codigos_Utiles;
 using EsMasBarato.Entidades.Dto;
 using EsMasBarato.Entidades.DtoRespuesta;
 using EsMasBarato.Negocios.Unidad_De_Trabajo;
@@ -31,7 +32,7 @@ namespace EsMasBarato.Api.Controllers
         {
             try
             {
-                var ListaUsuarios = await _uow.Usuarios.GetUsuarios();
+                var ListaUsuarios = await _uow.Usuarios.GetUsuarios(CodigosUtiles.OpcionTodos);
 
                 if (ListaUsuarios.Any())
                 {
@@ -41,11 +42,34 @@ namespace EsMasBarato.Api.Controllers
 
                 return Ok(new { success = false, message = "La Lista No Contiene Datos", result = new List<UsuarioRespuesta>() });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Usuario" +
                 " A Continuacion Encontraras Mas Informacion -> ->");
                 throw new InvalidOperationException("Excepcion En GetUsuarios(Controller Usuario)");
+            }
+        }
+
+        [HttpGet("{idUsuario}"), Authorize]
+        public async Task<ActionResult<IEnumerable<UsuarioRespuesta>>> GetUsuarioById(int idUsuario)
+        {
+            try
+            {
+                var usuario = await _uow.Usuarios.GetUsuarios(idUsuario);
+
+                if (usuario != null)
+                {
+                    
+                    return Ok(new { success = true, message = "Response Confirmado", result = usuario });
+                }
+
+                return NotFound(new { success = false, message = "No Se Encontro el usuario", result = 204 });
+            }
+            catch (Exception)
+            {
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Usuario," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetUsuarioById(Controller Usuario)");
             }
         }
 

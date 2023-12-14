@@ -49,5 +49,34 @@ namespace EsMasBarato.Negocios.Negocios.NegociosComercio
                 throw new InvalidOperationException("Excepcion En GetComercios(NegocioComercio)");
             }
         }
+
+        public async Task<decimal> ObtenerPromedioValoracionComercio(int idComercio)
+        {
+            try
+            {
+                var valoracionesComercio =  Context.ValoracionComercios
+                    .Where(valComercio => valComercio.IdComercio == idComercio)
+                    .Select(valComercio => valComercio.IdValoracion)
+                    .ToList();
+
+                if (valoracionesComercio.Count > 0)
+                {
+                    decimal promedioValoracion = (decimal)valoracionesComercio.Average();
+                    return promedioValoracion;
+                }
+                else
+                {
+                   
+                    return 0; // O cualquier otro valor por defecto
+                }
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioComercio" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En ObtenerPromedioValoracionComercio(NegocioComercio)");
+            }
+        }
+
     }
 }
