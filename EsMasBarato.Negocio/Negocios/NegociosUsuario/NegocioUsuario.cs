@@ -16,22 +16,21 @@ namespace EsMasBarato.Negocios.Negocios.NegociosUsuario
 
         public async Task<List<UsuarioRespuesta>> GetUsuarios(int idUser)
         {
-            try { 
-            var query = (from usuario in Context.Usuarios.Where(u => u.Borrado == 0)
-                         join rol in Context.Rols
-                         on usuario.IdRol equals rol.Id
-                         join comercio in Context.Comercios
-                         on usuario.IdComercio equals comercio.IdComercio
-                         select new UsuarioRespuesta
-                         {   Id = usuario.IdUsuario,
-                             Nombre = usuario.Nombre,
-                             Email = usuario.Email,
-                             IdRol = usuario.IdRol,
-                             TipoRol = rol.TipoRol,
-                             IdComercio = comercio.IdComercio,
-                             TipoComercio=comercio.Nombre
-                             
-                         }) ;
+            try {
+                var query = (from usuario in Context.Usuarios.Where(u => u.Borrado == 0)
+                             join rol in Context.Rols on usuario.IdRol equals rol.Id
+                             join comercio in Context.Comercios on usuario.IdComercio equals comercio.IdComercio into comercioJoin
+                             from comercio in comercioJoin.DefaultIfEmpty()
+                             select new UsuarioRespuesta
+                             {
+                                 Id = usuario.IdUsuario,
+                                 Nombre = usuario.Nombre,
+                                 Email = usuario.Email,
+                                 IdRol = usuario.IdRol,
+                                 TipoRol = rol.TipoRol,
+                                 IdComercio = comercio != null ? comercio.IdComercio : -1,
+                                 TipoComercio = comercio != null ? comercio.Nombre : null
+                             });
 
                 query = idUser != 0 ? query.Where(usuario => usuario.Id == idUser) : query;
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EsMasBarato.Api.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,5 +22,6 @@ namespace EsMasBarato.Entidades.DtoRespuesta
         public bool? Activo { get; set; }
         public bool? Anunciado { get; set; }
         public bool? Valoracion { get; set; }
+        public Comercio? Comercio { get; set; }
     }
 }

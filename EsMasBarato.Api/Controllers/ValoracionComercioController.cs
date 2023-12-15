@@ -25,8 +25,7 @@ namespace EsMasBarato.Api.Controllers
             _logger = logger;
         }
 
-        [Route("Valoracion/")]
-        [HttpGet("{idValoracion}")]
+        [HttpGet("Valoracion/{idValoracion}")]
         public async Task<ActionResult<IEnumerable<ValoracionComercioRespuesta>>> GetValoracionComercioporValoracion(int idValoracion)
         {
             try
@@ -57,8 +56,7 @@ namespace EsMasBarato.Api.Controllers
             }
         }
         
-        [Route("Comercio/")]
-        [HttpGet("{idComercio}")]
+        [HttpGet("Comercio/{idComercio}")]
         public async Task<ActionResult<IEnumerable<ValoracionComercioRespuesta>>> GetValoracionPorComercio(int idComercio)
         {
             try
@@ -88,7 +86,6 @@ namespace EsMasBarato.Api.Controllers
                 throw new InvalidOperationException("Excepcion En GetValoracionComercio(Controller ValoracionComercio)");
             }
         }
-
 
 
         [HttpPost]

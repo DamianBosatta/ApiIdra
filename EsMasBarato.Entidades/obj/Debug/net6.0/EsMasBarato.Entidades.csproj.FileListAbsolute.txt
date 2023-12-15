@@ -34,3 +34,15 @@ C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Entidades\obj\Debug\net6.0\E
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Entidades\obj\Debug\net6.0\refint\EsMasBarato.Entidades.dll
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Entidades\obj\Debug\net6.0\EsMasBarato.Entidades.pdb
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Entidades\obj\Debug\net6.0\ref\EsMasBarato.Entidades.dll
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\bin\Debug\net6.0\EsMasBarato.Entidades.deps.json
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\bin\Debug\net6.0\EsMasBarato.Entidades.dll
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\bin\Debug\net6.0\EsMasBarato.Entidades.pdb
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\obj\Debug\net6.0\EsMasBarato.Entidades.csproj.AssemblyReference.cache
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\obj\Debug\net6.0\EsMasBarato.Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\obj\Debug\net6.0\EsMasBarato.Entidades.AssemblyInfoInputs.cache
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\obj\Debug\net6.0\EsMasBarato.Entidades.AssemblyInfo.cs
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\obj\Debug\net6.0\EsMasBarato.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\obj\Debug\net6.0\EsMasBarato.Entidades.dll
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\obj\Debug\net6.0\refint\EsMasBarato.Entidades.dll
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\obj\Debug\net6.0\EsMasBarato.Entidades.pdb
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Entidades\obj\Debug\net6.0\ref\EsMasBarato.Entidades.dll

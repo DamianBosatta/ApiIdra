@@ -146,7 +146,6 @@ namespace EsMasBarato.Api.Controllers
             }
         }
 
-
         [HttpPut]
         public async Task<IActionResult> EditReseña(ReseñaDto reseñaDto)
         {
@@ -171,7 +170,6 @@ namespace EsMasBarato.Api.Controllers
                 throw new InvalidOperationException("Excepcion En EditReseña(Controller Reseñas)");
             }
         }
-
 
 
     }

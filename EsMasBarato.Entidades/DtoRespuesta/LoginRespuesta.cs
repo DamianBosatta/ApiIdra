@@ -18,5 +18,7 @@ namespace EsMasBarato.Entidades.DtoRespuesta
 
         public int? IdRol { get; set; }
 
+        public int? idComercio { get; set; }
+
     }
 }

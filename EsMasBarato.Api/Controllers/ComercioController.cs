@@ -56,8 +56,9 @@ namespace EsMasBarato.Api.Controllers
                 throw new InvalidOperationException("Excepcion En GetComercios(Controller Comercio)");
             }
         }
-        [Route("promedio/")]
-        [HttpGet("{idComercio}")]
+        
+
+        [HttpGet("promedio/{idComercio}")]
         public async Task<ActionResult> PromedioValoracionComercio(int idComercio)
         {
             try
@@ -79,6 +80,7 @@ namespace EsMasBarato.Api.Controllers
                 throw new InvalidOperationException("Excepcion En GetComercioById(Controller Comercio)");
             }
         }
+
 
         [HttpGet("{idComercio}")]
         public async Task<ActionResult<IEnumerable<ComercioRespuesta>>> GetComercioById(int idComercio)
@@ -102,8 +104,6 @@ namespace EsMasBarato.Api.Controllers
                 throw new InvalidOperationException("Excepcion En GetComercioById(Controller Comercio)");
             }
         }
-
-
 
         [HttpPost]
         public async Task<ActionResult> CargarComercio([FromBody] ComercioDto comercioDto)

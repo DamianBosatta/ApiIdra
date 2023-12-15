@@ -13,5 +13,6 @@ namespace EsMasBarato.Negocios.Negocios.NegociosProducto
     public interface INegocioProducto:INegocioGenerico<Producto>
     {
         public Task<List<ProductoRespuesta>> GetProductos(int idComercio, int idCategoria);
+        public Task<List<ProductoRespuesta>> GetProductosPorCondicion(string termino);
     }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {}
+    "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {
+    "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj",
         "projectName": "EsMasBarato.Entidades",
-        "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj",
-        "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\obj\\",
+        "projectPath": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj",
+        "packagesPath": "C:\\Users\\Felix\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Felix\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

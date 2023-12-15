@@ -57,7 +57,6 @@ namespace EsMasBarato.Api.Controllers
         }
 
 
-
         [HttpPost]
         public async Task<ActionResult> CargarCategoriaComercio([FromBody] CategoriaComercioDto categoriaComercioDto)
         {

@@ -54,5 +54,45 @@ namespace EsMasBarato.Negocios.Negocios.NegociosProducto
             }
 
         }
+
+        public async Task<List<ProductoRespuesta>> GetProductosPorCondicion(string termino)
+        {
+            try
+            {
+                var query = (from producto in Context.Productos
+                             join comercio in Context.Comercios
+                             on producto.IdComercio equals comercio.IdComercio
+                             join categoria in Context.Categorias
+                             on producto.IdCategoria equals categoria.IdCategoria
+                             where producto.CodigoBarra.Contains(termino) || producto.Descripcion.Contains(termino)
+                             select new ProductoRespuesta
+                             {
+                                 IdProducto = producto.IdProducto,
+                                 Descripcion = producto.Descripcion,
+                                 PrecioRegular = producto.PrecioRegular,
+                                 PrecioWeb = producto.PrecioWeb,
+                                 IdComercio = producto.IdComercio,
+                                 DescripcionComercio = comercio.Nombre,
+                                 IdCategoria = producto.IdCategoria,
+                                 DescripcionCategoria = categoria.Descripcion,
+                                 CodigoBarra = producto.CodigoBarra,
+                                 Activo = producto.Activo,
+                                 Anunciado = producto.Anunciado,
+                                 Valoracion = producto.Valoracion,
+                                 Comercio = comercio
+
+                             });
+
+
+                return await query.ToListAsync();
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En NegocioProducto" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetProductos(NegocioProducto)");
+            }
+
+        }
     }
 }

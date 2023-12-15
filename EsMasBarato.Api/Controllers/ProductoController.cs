@@ -57,7 +57,7 @@ namespace EsMasBarato.Api.Controllers
             }
         }
 
-        [HttpGet("productos/comercio")]
+        [HttpGet("comercio")]
         public async Task<ActionResult<IEnumerable<ProductoRespuesta>>> GetProductosPorComercio([FromQuery] int idComercio)
         {
             try
@@ -87,7 +87,7 @@ namespace EsMasBarato.Api.Controllers
             }
         }
 
-        [HttpGet("productos/categoria")]
+        [HttpGet("categoria")]
         public async Task<ActionResult<IEnumerable<ProductoRespuesta>>> GetProductosPorCategoria([FromQuery] int idCategoria)
         {
             try
@@ -118,6 +118,37 @@ namespace EsMasBarato.Api.Controllers
             }
         }
 
+        [HttpGet("buscar")]
+        public async Task<ActionResult<IEnumerable<ProductoRespuesta>>> GetProductosPorCondicion([FromQuery] string termino)
+        {
+            try
+            {
+                var listaProductos = await _unidadDeTrabajo.Productos.GetProductosPorCondicion(termino);
+                // Materialize the query
+
+                if (listaProductos.Any())
+                {
+
+                    return Ok(new
+                    {
+                        success = true,
+                        message = "La Lista puede Ser Utilizada",
+                        result = listaProductos
+                    });
+                }
+                else
+                {
+                    return NoContent(); // 204 No Content is more appropriate for empty results
+                }
+            }
+            catch (Exception)
+            {
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Productos," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En GetProductosPorCategoria(Controller Productos)");
+            }
+        }
+        
         [HttpPost]
         public async Task<ActionResult> CargarProducto([FromBody] ProductoDto productoDto)
         {
@@ -146,7 +177,6 @@ namespace EsMasBarato.Api.Controllers
                 throw new InvalidOperationException("Excepcion En CargarProducto(Controller Productos)");
             }
         }
-
 
         [HttpPut]
         public async Task<IActionResult> EditProducto(ProductoDto productoDto)

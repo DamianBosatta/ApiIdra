@@ -10,3 +10,15 @@ C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Excepciones\obj\Debug\net6.0
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Excepciones\obj\Debug\net6.0\refint\EsMasBarato.Excepciones.dll
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Excepciones\obj\Debug\net6.0\EsMasBarato.Excepciones.pdb
 C:\Users\Damian\Desktop\EsMasBarato.Api\EsMasBarato.Excepciones\obj\Debug\net6.0\ref\EsMasBarato.Excepciones.dll
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\bin\Debug\net6.0\EsMasBarato.Excepciones.deps.json
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\bin\Debug\net6.0\EsMasBarato.Excepciones.dll
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\bin\Debug\net6.0\EsMasBarato.Excepciones.pdb
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\obj\Debug\net6.0\EsMasBarato.Excepciones.csproj.AssemblyReference.cache
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\obj\Debug\net6.0\EsMasBarato.Excepciones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\obj\Debug\net6.0\EsMasBarato.Excepciones.AssemblyInfoInputs.cache
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\obj\Debug\net6.0\EsMasBarato.Excepciones.AssemblyInfo.cs
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\obj\Debug\net6.0\EsMasBarato.Excepciones.csproj.CoreCompileInputs.cache
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\obj\Debug\net6.0\EsMasBarato.Excepciones.dll
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\obj\Debug\net6.0\refint\EsMasBarato.Excepciones.dll
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\obj\Debug\net6.0\EsMasBarato.Excepciones.pdb
+C:\Users\Felix\Source\Repos\MasBarato\EsMasBarato.Excepciones\obj\Debug\net6.0\ref\EsMasBarato.Excepciones.dll

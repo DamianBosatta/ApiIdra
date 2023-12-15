@@ -50,7 +50,7 @@ namespace EsMasBarato.Api.Controllers
             }
         }
 
-        [HttpGet("{idUsuario}"), Authorize]
+        [HttpGet("{idUsuario}")]
         public async Task<ActionResult<IEnumerable<UsuarioRespuesta>>> GetUsuarioById(int idUsuario)
         {
             try
@@ -99,6 +99,7 @@ namespace EsMasBarato.Api.Controllers
                 throw new InvalidOperationException("Excepcion En RegistrarUsuario(Controller Usuario)");
             }
         }
+        
         [Route("Login/")]
         [HttpPost]
         public async Task<ActionResult> LoginAsync([FromBody] LoginDto login)
@@ -125,6 +126,7 @@ namespace EsMasBarato.Api.Controllers
                     loginRespuesta.Id = usuario.IdUsuario;
                     loginRespuesta.IdRol = usuario.IdRol;
                     loginRespuesta.Token = token;
+                    loginRespuesta.idComercio = usuario.IdComercio;
                  
 
                     return Ok(new { success = true, message = "Login Correcto", result = loginRespuesta });
