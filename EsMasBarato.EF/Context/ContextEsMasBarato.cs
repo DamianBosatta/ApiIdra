@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using EsMasBarato.Api.Modelos;
+﻿using EsMasBarato.Api.Modelos;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+
 
 namespace EsMasBarato.EF.Context
 {
@@ -197,7 +195,6 @@ namespace EsMasBarato.EF.Context
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
-                    .ValueGeneratedNever()
                     .HasColumnName("id");
 
                 entity.Property(e => e.Comentario).HasMaxLength(100);

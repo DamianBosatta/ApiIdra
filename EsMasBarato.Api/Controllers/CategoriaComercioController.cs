@@ -62,7 +62,8 @@ namespace EsMasBarato.Api.Controllers
         {
             try
             {
-                var categoriaComercio = await _unidadDeTrabajo.CategoriasComercio.GetByConditionAsync(c => c.Nombre == categoriaComercioDto.Nombre);
+                var categoriaComercio = await _unidadDeTrabajo.CategoriasComercio.
+                GetByConditionAsync(c => c.Nombre == categoriaComercioDto.Nombre);
 
                 if (categoriaComercio == null)
                 {

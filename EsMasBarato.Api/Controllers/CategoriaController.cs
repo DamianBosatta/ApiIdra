@@ -4,6 +4,7 @@ using EsMasBarato.Api.Modelos;
 using EsMasBarato.Negocios.Unidad_De_Trabajo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using EsMasBarato.Entidades.Codigos_Utiles;
 
 namespace EsMasBarato.Api.Controllers
 {
@@ -31,7 +32,7 @@ namespace EsMasBarato.Api.Controllers
             try
             {
                 var listaCategorias = await _unidadDeTrabajo.Categorias
-                    .GetAllByConditionAsync(u => u.Borrado == 0); // Materialize the query
+                    .GetAllByConditionAsync(u => u.Borrado == (ulong)CodigosUtiles.OpcionTodos); // Materialize the query
 
                 if (listaCategorias.Any())
                 {
@@ -58,7 +59,8 @@ namespace EsMasBarato.Api.Controllers
         {
             try
             {
-                var categoria = await _unidadDeTrabajo.Categorias.GetByConditionAsync(c => c.Descripcion == categoriaDto.Descripcion);
+                var categoria = await _unidadDeTrabajo.Categorias.
+                GetByConditionAsync(c => c.Descripcion == categoriaDto.Descripcion);
 
                 if (categoria == null)
                 {
@@ -87,9 +89,10 @@ namespace EsMasBarato.Api.Controllers
         {
             try
             {
-                var categoria = await _unidadDeTrabajo.Categorias.GetByIdAsync((int)categoriaDto.IdCategoria);
+                var categoria = await _unidadDeTrabajo.Categorias.
+                GetByIdAsync((int)categoriaDto.IdCategoria);
 
-                if (categoria != null && categoria.Borrado == 0)
+                if (categoria != null && categoria.Borrado == (ulong)CodigosUtiles.OpcionTodos)
                 {
                     _mapper.Map(categoriaDto, categoria);
                     await _unidadDeTrabajo.Categorias.UpdateAsync(categoria);

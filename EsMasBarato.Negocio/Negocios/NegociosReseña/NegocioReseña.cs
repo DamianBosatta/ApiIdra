@@ -30,7 +30,7 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
             select new ReseñaRespuesta
             {
                 Id = reseña.Id,
-                IdUsuario = reseña.Id,
+                IdUsuario = reseña.IdUsuario,
                 NombreUsuario= usuario.Nombre,
                 IdProducto= producto.IdProducto,
                 DescripcionProducto=producto.Descripcion,
