@@ -122,6 +122,35 @@ namespace EsMasBarato.Api.Controllers
             }
         }
 
+        [Route("valoracion/{idProducto}")]
+        [HttpGet]
+        public async Task<ActionResult> PromedioValoracionReseña(int idProducto)
+        {
+            try
+            {
+                var promedioValoracion = await _unidadDeTrabajo.Reseñas.ObtenerPromedioValoracionProducto(idProducto);
+
+                if (promedioValoracion>0)
+                {
+
+                    return Ok(new
+                    {
+                        success = true,
+                        message = "Este es el promedio",
+                        result = promedioValoracion
+                    });
+                }
+                
+                return NotFound(new { success = false, message = "El promedio es 0 ", result = 204 });
+            }
+            catch (Exception)
+            {
+                _logger.LogError("ATENCION!! Capturamos Error En la Controladora De Reseñas," +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En  GetReseñasPorValoracion(Controller Reseñas)");
+            }
+        }
+
         [HttpPost]
         public async Task<ActionResult> CargarReseña([FromBody] ReseñaDto reseñaDto)
         {

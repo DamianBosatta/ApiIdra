@@ -58,5 +58,30 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
             }
         }
 
+        public async Task<decimal?> ObtenerPromedioValoracionProducto(int idProducto)
+        {
+            try
+            {
+                var valoracionesProducto = Context.Reseñas
+                    .Where(reseña => reseña.IdProducto == idProducto)
+                    .Select(valoracion => valoracion.IdValoracion);
+
+                if (valoracionesProducto.Any())
+                {
+                    return (decimal)valoracionesProducto.Average();
+                }
+                else
+                {
+                    return null; // Devuelve null si no hay valoraciones
+                }
+            }
+            catch (Exception)
+            {
+                _logger.Error("ATENCION!! Capturamos Error En  NegocioReseña" +
+                      " A Continuacion Encontraras Mas Informacion -> ->");
+                throw new InvalidOperationException("Excepcion En ObtenerPromedioValoracionProducto( NegocioReseña)");
+            }
+        }
+
     }
 }

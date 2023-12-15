@@ -1476,19 +1476,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Felix\\.nuget\\packages\\": {}
+    "C:\\Users\\Damian\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Negocio\\EsMasBarato.Negocios.csproj",
+      "projectUniqueName": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Negocio\\EsMasBarato.Negocios.csproj",
       "projectName": "EsMasBarato.Negocios",
-      "projectPath": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Negocio\\EsMasBarato.Negocios.csproj",
-      "packagesPath": "C:\\Users\\Felix\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Negocio\\obj\\",
+      "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Negocio\\EsMasBarato.Negocios.csproj",
+      "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Negocio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Felix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1502,14 +1502,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.EF\\EsMasBarato.EF.csproj": {
-              "projectPath": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.EF\\EsMasBarato.EF.csproj"
+            "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj": {
+              "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj"
             },
-            "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {
-              "projectPath": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj"
+            "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {
+              "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj"
             },
-            "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj": {
-              "projectPath": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj"
+            "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj": {
+              "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj"
             }
           }
         }
