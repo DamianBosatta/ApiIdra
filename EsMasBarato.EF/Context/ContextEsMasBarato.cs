@@ -1,6 +1,8 @@
-﻿using EsMasBarato.Api.Modelos;
+﻿using System;
+using System.Collections.Generic;
+using EsMasBarato.Api.Modelos;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace EsMasBarato.EF.Context
 {
@@ -35,10 +37,9 @@ namespace EsMasBarato.EF.Context
 
             {
 
-                optionsBuilder.UseMySql(_connectionString, ServerVersion.Parse("5.7.30-mysql"));
+                optionsBuilder.UseMySql(_connectionString, ServerVersion.Parse("5.7.30-              mysql"));
             }
         }
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -307,7 +308,6 @@ namespace EsMasBarato.EF.Context
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
-                    .ValueGeneratedNever()
                     .HasColumnName("id");
 
                 entity.Property(e => e.Comentario)
