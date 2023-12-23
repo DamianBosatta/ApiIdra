@@ -8,6 +8,7 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
     {
         public Task<List<ReseñaRespuesta>> GetReseñas(int idProducto, int idValoracion, int idUsuario);
 
-        public Task<decimal?> ObtenerPromedioValoracionProducto(int idProducto);
+        public Task<object?> ObtenerPromedioValoracionProducto(int idProducto);
+
     }
 }

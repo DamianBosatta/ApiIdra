@@ -1,0 +1,12 @@
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\bin\Release\net6.0\EsMasBarato.Entidades.deps.json
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\bin\Release\net6.0\EsMasBarato.Entidades.dll
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\bin\Release\net6.0\EsMasBarato.Entidades.pdb
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\obj\Release\net6.0\EsMasBarato.Entidades.csproj.AssemblyReference.cache
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\obj\Release\net6.0\EsMasBarato.Entidades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\obj\Release\net6.0\EsMasBarato.Entidades.AssemblyInfoInputs.cache
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\obj\Release\net6.0\EsMasBarato.Entidades.AssemblyInfo.cs
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\obj\Release\net6.0\EsMasBarato.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\obj\Release\net6.0\EsMasBarato.Entidades.dll
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\obj\Release\net6.0\refint\EsMasBarato.Entidades.dll
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\obj\Release\net6.0\EsMasBarato.Entidades.pdb
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Entidades\obj\Release\net6.0\ref\EsMasBarato.Entidades.dll

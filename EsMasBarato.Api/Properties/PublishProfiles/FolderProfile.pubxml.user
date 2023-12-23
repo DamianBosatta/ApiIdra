@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Felix\source\repos\MasBarato\EsMasBarato.Api\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2023-12-22T21:49:41.6961089Z;True|2023-12-22T18:37:49.7488889-03:00;True|2023-12-22T18:32:29.6257849-03:00;True|2023-12-22T18:27:28.3689456-03:00;True|2023-12-22T18:17:07.8078163-03:00;True|2023-12-22T18:03:46.0525404-03:00;True|2023-12-17T11:11:29.7452544-03:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

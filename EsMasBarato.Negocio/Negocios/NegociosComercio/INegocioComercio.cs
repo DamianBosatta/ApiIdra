@@ -9,6 +9,6 @@ namespace EsMasBarato.Negocios.Negocios.NegociosComercio
     {
         public Task<List<ComercioRespuesta>> GetComercios(int idComercio);
 
-        public Task<decimal> ObtenerPromedioValoracionComercio(int idComercio);
+        public Task<object?> ObtenerPromedioValoracionComercio(int idComercio);
     }
 }

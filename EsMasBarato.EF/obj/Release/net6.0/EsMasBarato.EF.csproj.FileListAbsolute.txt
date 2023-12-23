@@ -1,0 +1,17 @@
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\bin\Release\net6.0\EsMasBarato.EF.deps.json
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\bin\Release\net6.0\EsMasBarato.EF.runtimeconfig.json
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\bin\Release\net6.0\EsMasBarato.EF.dll
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\bin\Release\net6.0\EsMasBarato.EF.pdb
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\bin\Release\net6.0\EsMasBarato.Entidades.dll
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\bin\Release\net6.0\EsMasBarato.Entidades.pdb
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\EsMasBarato.EF.csproj.AssemblyReference.cache
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\EsMasBarato.EF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\EsMasBarato.EF.AssemblyInfoInputs.cache
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\EsMasBarato.EF.AssemblyInfo.cs
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\EsMasBarato.EF.csproj.CoreCompileInputs.cache
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\EsMasBarato.EF.csproj.CopyComplete
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\EsMasBarato.EF.dll
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\refint\EsMasBarato.EF.dll
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\EsMasBarato.EF.pdb
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\EsMasBarato.EF.genruntimeconfig.cache
+C:\Users\Felix\source\repos\MasBarato\EsMasBarato.EF\obj\Release\net6.0\ref\EsMasBarato.EF.dll

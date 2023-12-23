@@ -8,7 +8,7 @@ namespace EsMasBarato.Entidades.DtoRespuesta
 {
     public class ValoracionComercioRespuesta
     {
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
         public int? IdValoracion { get; set; }
         public string DescripcionValoracion { get; set; }= string.Empty;
         public string? Comentario { get; set; }

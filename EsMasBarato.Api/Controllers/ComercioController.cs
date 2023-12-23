@@ -63,15 +63,25 @@ namespace EsMasBarato.Api.Controllers
         {
             try
             {
-               decimal promedio = await _unidadDeTrabajo.Comercios.ObtenerPromedioValoracionComercio(idComercio);
+               var promedio = await _unidadDeTrabajo.Comercios.ObtenerPromedioValoracionComercio(idComercio);
 
-                if (promedio>0)
+                if (promedio!=null)
                 {
-                    
-                    return Ok(new { success = true, message = "Response Confirmado", result = promedio });
+
+                    return Ok(new
+                    {
+                        success = true,
+                        message = "Este es el promedio",
+                        result = promedio
+                    });
                 }
 
-                return NotFound(new { success = false, message = "El promedio es 0 ", result = 204 });
+                return Ok(new { success = false, message = "El promedio es 0 ", result = new
+                {
+                    promedio = 0,
+                    cantidad = 0
+                }
+                });
             }
             catch (Exception)
             {

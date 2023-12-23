@@ -27,6 +27,9 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
             on reseña.IdProducto equals producto.IdProducto
             join usuario in Context.Usuarios
             on reseña.IdUsuario equals usuario.IdUsuario
+            join comercio in Context.Comercios
+            on producto.IdComercio equals comercio.IdComercio
+
             select new ReseñaRespuesta
             {
                 Id = reseña.Id,
@@ -35,9 +38,9 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
                 IdProducto= producto.IdProducto,
                 DescripcionProducto=producto.Descripcion,
                 IdValoracion= reseña.IdValoracion,
-                Comentario=reseña.Comentario
-                
-
+                Comentario=reseña.Comentario,
+                producto=producto,
+                comercio=comercio
 
             });
 
@@ -58,7 +61,7 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
             }
         }
 
-        public async Task<decimal?> ObtenerPromedioValoracionProducto(int idProducto)
+        public async Task<object?> ObtenerPromedioValoracionProducto(int idProducto)
         {
             try
             {
@@ -68,7 +71,11 @@ namespace EsMasBarato.Negocios.Negocios.NegociosReseña
 
                 if (valoracionesProducto.Any())
                 {
-                    return (decimal)valoracionesProducto.Average();
+                    return new
+                    {
+                        promedio = (decimal)valoracionesProducto.Average(),
+                        cantidad = valoracionesProducto.Count()
+                    };
                 }
                 else
                 {

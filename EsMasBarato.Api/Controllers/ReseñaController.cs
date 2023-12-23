@@ -122,7 +122,7 @@ namespace EsMasBarato.Api.Controllers
             }
         }
 
-        [Route("valoracion/{idProducto}")]
+        [Route("promedio/{idProducto}")]
         [HttpGet]
         public async Task<ActionResult> PromedioValoracionReseña(int idProducto)
         {
@@ -130,7 +130,7 @@ namespace EsMasBarato.Api.Controllers
             {
                 var promedioValoracion = await _unidadDeTrabajo.Reseñas.ObtenerPromedioValoracionProducto(idProducto);
 
-                if (promedioValoracion>0)
+                if (promedioValoracion!=null)
                 {
 
                     return Ok(new
@@ -140,8 +140,13 @@ namespace EsMasBarato.Api.Controllers
                         result = promedioValoracion
                     });
                 }
-                
-                return NotFound(new { success = false, message = "El promedio es 0 ", result = 204 });
+
+                return Ok(new { success = false, message = "El promedio es 0 ", result = new
+                {
+                    promedio = 0,
+                    cantidad = 0
+                }
+            });
             }
             catch (Exception)
             {
@@ -156,16 +161,23 @@ namespace EsMasBarato.Api.Controllers
         {
             try
             {
-                           
-               
-                   Reseña reseñaNew = _mapper.Map<Reseña>(reseñaDto);
+
+                var reseña = await _unidadDeTrabajo.Reseñas.GetByConditionAsync(reseña => reseña.IdProducto == reseñaDto.IdProducto && reseña.IdUsuario == reseñaDto.IdUsuario);     
+
+                   if(reseña == null)
+                    {
+                    Reseña reseñaNew = _mapper.Map<Reseña>(reseñaDto);
 
                     await _unidadDeTrabajo.Reseñas.InsertAsync(reseñaNew);
-                    
+
                     return Ok(new { success = true, message = "La Reseña fue creada con éxito", result = 200 });
-               
-                   
-                
+                }
+                else
+                {
+                    return Ok(new { success = false, message = "El usuario ya valoro el producto", result = 204 });
+                }
+
+  
             }
             catch (Exception)
             {

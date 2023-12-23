@@ -307,7 +307,6 @@ namespace EsMasBarato.EF.Context
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
-                    .ValueGeneratedNever()
                     .HasColumnName("id");
 
                 entity.Property(e => e.Comentario)

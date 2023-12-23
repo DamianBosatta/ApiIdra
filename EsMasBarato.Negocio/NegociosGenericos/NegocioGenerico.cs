@@ -9,14 +9,17 @@ namespace EsMasBarato.Negocios.NegociosGenericos
     public class NegocioGenerico<T> : BLLContext, INegocioGenerico<T> where T : class
     {
         protected readonly ILogger _logger;
-      
+        private Microsoft.Extensions.Logging.ILogger logger;
 
         public NegocioGenerico(ILogger logger)
         {
            _logger = logger;
         }
 
-     
+        public NegocioGenerico(Microsoft.Extensions.Logging.ILogger logger)
+        {
+            this.logger = logger;
+        }
 
         public async Task<int> DeleteAsync(T model)
         {

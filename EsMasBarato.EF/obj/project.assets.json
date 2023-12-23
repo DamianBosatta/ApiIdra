@@ -980,19 +980,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Damian\\.nuget\\packages\\": {}
+    "C:\\Users\\Felix\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
+      "projectUniqueName": "C:\\Users\\Felix\\source\\repos\\MasBarato\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
       "projectName": "EsMasBarato.EF",
-      "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
-      "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.EF\\obj\\",
+      "projectPath": "C:\\Users\\Felix\\source\\repos\\MasBarato\\EsMasBarato.EF\\EsMasBarato.EF.csproj",
+      "packagesPath": "C:\\Users\\Felix\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.EF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Felix\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1006,8 +1006,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {
-              "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj"
+            "C:\\Users\\Felix\\source\\repos\\MasBarato\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj": {
+              "projectPath": "C:\\Users\\Felix\\source\\repos\\MasBarato\\EsMasBarato.Entidades\\EsMasBarato.Entidades.csproj"
             }
           }
         }

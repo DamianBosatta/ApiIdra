@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj": {}
+    "C:\\Users\\Felix\\source\\repos\\MasBarato\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj": {
+    "C:\\Users\\Felix\\source\\repos\\MasBarato\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj",
+        "projectUniqueName": "C:\\Users\\Felix\\source\\repos\\MasBarato\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj",
         "projectName": "EsMasBarato.Excepciones",
-        "projectPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj",
-        "packagesPath": "C:\\Users\\Damian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Damian\\Desktop\\EsMasBarato.Api\\EsMasBarato.Excepciones\\obj\\",
+        "projectPath": "C:\\Users\\Felix\\source\\repos\\MasBarato\\EsMasBarato.Excepciones\\EsMasBarato.Excepciones.csproj",
+        "packagesPath": "C:\\Users\\Felix\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Felix\\Source\\Repos\\MasBarato\\EsMasBarato.Excepciones\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Damian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Felix\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -50,24 +50,26 @@ namespace EsMasBarato.Negocios.Negocios.NegociosComercio
             }
         }
 
-        public async Task<decimal> ObtenerPromedioValoracionComercio(int idComercio)
+        public async Task<object?> ObtenerPromedioValoracionComercio(int idComercio)
         {
             try
             {
-                var valoracionesComercio =  Context.ValoracionComercios
+                var valoracionesComercio = Context.ValoracionComercios
                     .Where(valComercio => valComercio.IdComercio == idComercio)
-                    .Select(valComercio => valComercio.IdValoracion)
-                    .ToList();
+                    .Select(valComercio => valComercio.IdValoracion);
 
-                if (valoracionesComercio.Count > 0)
+                if (valoracionesComercio.Any())
                 {
-                    decimal promedioValoracion = (decimal)valoracionesComercio.Average();
-                    return promedioValoracion;
+                    return new
+                    {
+                        promedio = (decimal)valoracionesComercio.Average(),
+                        cantidad = valoracionesComercio.Count()
+                    };
                 }
                 else
                 {
                    
-                    return 0; // O cualquier otro valor por defecto
+                    return null; 
                 }
             }
             catch (Exception)

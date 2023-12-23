@@ -82,11 +82,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
 var app = builder.Build();
 //// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 app.UseCustomExceptionHandler();
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
